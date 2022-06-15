@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Park Factor，パークファクター，球场系数  ​​原文地址：パークファクターはどのような考え方で算出されるか  球场与球场之间，两翼之间、中坚的距离、围栏的高度都是不一样的，左右形状不对称的球场有很多，棒球是唯一可以在这种条件下进行的运动。（中略）尽管如此，本垒打数作为官方记录，并且拥有自己的头衔，并不是一个公平的记录，但没有人抱怨，并认为是理所当然的。 やっぱりホームランは野球の“華”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【翻译】球场系数（Park Factor）是如何得到的？">
+<meta property="og:url" content="http://example.com/2022/05/30/baseball/20220530/index.html">
+<meta property="og:site_name" content="Kala&#39;s Blog">
+<meta property="og:description" content="Park Factor，パークファクター，球场系数  ​​原文地址：パークファクターはどのような考え方で算出されるか  球场与球场之间，两翼之间、中坚的距离、围栏的高度都是不一样的，左右形状不对称的球场有很多，棒球是唯一可以在这种条件下进行的运动。（中略）尽管如此，本垒打数作为官方记录，并且拥有自己的头衔，并不是一个公平的记录，但没有人抱怨，并认为是理所当然的。 やっぱりホームランは野球の“華”">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qanre7ifj30b604v0sr.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qaowv2u8j30b904saa3.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qayl446vj30do07374a.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/007ieIrnly4h2qb7bh51ij30gr084wew.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qbhet7foj30di0740sr.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qcc9pw2jj30gk0330sp.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qczhw2wsj30ab068jre.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/007ieIrnly4h2qdnbrn9oj30ho099dgs.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qe1rvrn5j30hb08d74u.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2pjqv7k8pj30h904o74f.jpg">
+<meta property="article:published_time" content="2022-05-30T14:40:00.000Z">
+<meta property="article:modified_time" content="2022-06-15T07:56:05.485Z">
+<meta property="article:author" content="Kala">
+<meta property="article:tag" content="棒球">
+<meta property="article:tag" content="NPB">
+<meta property="article:tag" content="翻译">
+<meta property="article:tag" content="棒球数据">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qanre7ifj30b604v0sr.jpg">
+
+<link rel="canonical" href="http://example.com/2022/05/30/baseball/20220530/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【翻译】球场系数（Park Factor）是如何得到的？ | Kala's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Kala's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">存档基地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/baseball/20220530/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【翻译】球场系数（Park Factor）是如何得到的？
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-30 22:40:00" itemprop="dateCreated datePublished" datetime="2022-05-30T22:40:00+08:00">2022-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 15:56:05" itemprop="dateModified" datetime="2022-06-15T15:56:05+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A3%92%E7%90%83%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">棒球相关</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Park Factor，パークファクター，球场系数</p>
+</blockquote>
+<p>​​原文地址：<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ranzankeikoku.blog.fc2.com/blog-entry-2795.html">パークファクターはどのような考え方で算出されるか</a></p>
+<blockquote>
+<p>球场与球场之间，两翼之间、中坚的距离、围栏的高度都是不一样的，左右形状不对称的球场有很多，棒球是唯一可以在这种条件下进行的运动。（中略）尽管如此，本垒打数作为官方记录，并且拥有自己的头衔，并不是一个公平的记录，但没有人抱怨，并认为是理所当然的。</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://www.sanspo.com/article/20170616-OLZT6HA3UFJXVOBXI5JVM5K6VU/2/">やっぱりホームランは野球の“華”(SANSPO.com/小早川毅彦のベースボールカルテ)</a></p>
+</blockquote>
+<p>近年来，人们设计了几种方法来量化球场的影响，并将这个数值称为“<strong>球场系数</strong>”（Park Factor）。 球场系数不仅是了解球场特点的线索，还可以用于考虑球场差异后比较不同选手的成绩。在这篇文章中，笔者将解释这个球场系数是如何计算得出的。</p>
+<h1 id="如何比较球场"><a href="#如何比较球场" class="headerlink" title="如何比较球场"></a>如何比较球场</h1><p>首先举一个简单的例子，来看看怎么比较球场，这里我们比较了明治神宫野球场（后简称神宫）和名古屋巨蛋（后简称名蛋）：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qanre7ifj30b604v0sr.jpg" alt="20201105_pf3.png"></p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qaowv2u8j30b904saa3.jpg" alt="20201105_pf2.png"></p>
+<p>在围栏更近且更低的神宫，更容易打出本垒打。但仅从从围栏数据中，我们还是不知道“在神宫比在名蛋轰出本垒打容易<strong>多少倍</strong>”。因此，考虑是否有可能从两个球场的记录中以某种方式量化轰出本垒打的难易程度。</p>
+<p>比较一下在神宫和名蛋打出的本垒打数怎么样？每年两个球场都会举行大约70场比赛，但哪个球场的本垒打最多？如图所示，每年在两个球场打出的本垒打数（场均）。</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qayl446vj30do07374a.jpg" alt="20201003_pf.png"></p>
+<p>可以看出，每年神宫轰出的本垒打数都是名蛋的倍数，在此期间内，神宫每场比赛的本垒打数为  2.36 轰，名蛋为 1.09 轰。也就是说，2.36 ÷ 1.09 = 2.17，可以说：“在神宫打出本垒打容易2.17倍”……</p>
+<p>正如你们中的许多人可能已经注意到的那样，这个方法存在缺陷，通过观察在这两个球场进行比赛的球队比赛分布图，就可以发现问题所在。</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/007ieIrnly4h2qb7bh51ij30gr084wew.jpg" alt="20201010_pf.png"></p>
+<p>问题在于，使用球场的队伍是不一样的，所以在各个球场打出的本垒打数无法直接比较。这是因为日本职棒都有义务拥有一个主场，主场的比赛组合必然是：以这个地方为主场的球队对战其他队伍。</p>
+<p>比方说，神宫的比赛就全是养乐多vs其他队伍，如果养乐多队有很多长距离炮，那么神宫的本垒打数理所当然会多。当时，养乐多有经验丰富的本垒打王和NPB赛季本垒打纪录保持者，所以上面的猜测事可能发生的。</p>
+<p>那么如何比较两个球场的本垒打数呢？看上面的图表，有没有注意到“养乐多vs中日”的比赛在两个球场都会举办？如果只比较这一对阵的本垒打数，可以避免球队不同带来的问题。</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qbhet7foj30di0740sr.jpg" alt="20201003_pf2.png"></p>
+<p>在两个球场都举行了养乐多vs中日的比赛，而每年神宫轰出的本垒打数依旧都是名蛋的倍数。有理由认为，这并不是因为养乐多有很多长距离炮，而是反映了两个球场的差异。在这两个球队的比赛中，神宫每场比赛的本垒打数为 2.67 轰，名蛋为 1.10 轰。也就是说：“在神宫打出本垒打容易2.42倍(=2.67÷1.10)”</p>
+<p>这样，“保持比赛双方球队不变，仅比较使用的球场不同的情况”是计算球场系数的基本思路。但是，这样我们只能按比较两个球场的差异，因此我们将在下一节讨论比较三个或更多球场的理论。</p>
+<h1 id="一般球场系数的计算公式"><a href="#一般球场系数的计算公式" class="headerlink" title="一般球场系数的计算公式"></a>一般球场系数的计算公式</h1><p>这六只队伍所在的中央联盟就有六个主场，这样两个两个比较十分不便。因此，提出一个“球场系数”的指标可以横向比较三个及三个以上的球场。</p>
+<p>特点是“主场和主场以外的球场比较”的想法，比如神宫的易轰程度是基于以神宫为主场的养乐多队的比赛数据得出的。把养乐多比赛中所有打出的本垒打数作为全体，把在神宫击出的本垒打数和在其它球场击出的本垒打数进行比较。</p>
+<p>养乐多一年中有一半的时间在神宫比赛，剩下的一半在其它队伍的主场比赛。通过神宫和其它球场的比较，我们可以定量化“在几个主场中神宫的易轰程度出生于什么位置”，如果把它写成公式，可以以如下的形式表示：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qcc9pw2jj30gk0330sp.jpg" alt="20201024_pf1-1.png"></p>
+<p>在神宫举行的“养乐多 vs 其他球队”比赛中打出的本垒打数（场均），除以在其他球场举行的“养乐多 vs 其他球队”比赛中打出的本垒打数（场均），这是最常见的球场系数的计算公式。（参考<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ja.wikipedia.org/wiki/%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25AF%25E3%2583%2595%25E3%2582%25A1%25E3%2582%25AF%25E3%2582%25BF%25E3%2583%25BC">Wikipedia</a> 和<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://1point02.jp/op/gnav/glossary/gls_explanation.aspx?eid=20016"> 1.02 –Essense of Baseball</a>）</p>
+<p>这个公式的优点在于，分母和分子都选取的是“保持比赛双方球队不变，仅比较使用的球场不同的情况”。因为养乐多和每支队伍交手的时候，原则上它会在客场和神宫打同样场次的比赛，养乐多在神宫比赛的多少场，那么去其它球队的主场也会打多少场。神宫以外的球场也可以使用以它们为主场的球队的比赛结果来计算。</p>
+<p>以下是使用该方法对中央联盟6个球场本垒打难易程度的评测，取的数值为2017-2019年的平均值。</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qczhw2wsj30ab068jre.jpg" alt="20200920_pf3.png"></p>
+<p>如图所示，展示了与中央联盟使用的球场平均值相比，不同球场轰出本垒打的系数。神宫、东京巨蛋、横滨更容易打出本垒打，马自达、甲子园、名古屋巨蛋好像是很难打出本垒打的球场。用一般球场系数的计算公式中，可以这样评价各球场本垒打的难易程度。</p>
+<h1 id="计算公式的缺点"><a href="#计算公式的缺点" class="headerlink" title="计算公式的缺点"></a>计算公式的缺点</h1><p>到这里为止，在球场系数的计算公式中，我们得到了最正统的公式。但是，这个公式在定量比较各球场方面有两个明显的缺点。最后，在明确这些缺点为什么会成为问题的基础上，我们将推导出包含对策的优化后计算公式。</p>
+<h2 id="缺点①-把交流战包含在计算中"><a href="#缺点①-把交流战包含在计算中" class="headerlink" title="缺点① 把交流战包含在计算中"></a>缺点① 把交流战包含在计算中</h2><blockquote>
+<p>プロ野球のスケジュールが８年ぶりに姿を変える。１２球団代表者会議が１１日、都内で開かれ、来季の交流戦を現行の２４試合制から１８試合制へ変更することで合意した。（中略） ２４試合制では各カード４試合（ホーム、ビジター各２試合）だったが、１８試合制では各カード３試合となり、隔年でホームとビジターで３連戦を戦う形に変わる。<br><em>【简而言之，现在的交流战一个赛季只有主场or只有客场的3场比赛，以前是2场主场、2场客场。】</em><br><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://www.nikkansports.com/baseball/news/p-bb-tp0-20140812-1349482.html">交流戦18試合制で合意　セがパ押し切る(日刊スポーツ)</a></p>
+</blockquote>
+<p>交流战从2015年开始变成了上面提到的18场比赛制。虽然和央联和洋联球队各对战3场，但这3场比赛只使用主场或客场其中一个球场，也就是说，对于对战的两支队伍，交流战中会存在“只在主场对战的队伍”和“只在客场对战的队伍”。</p>
+<p>“保持比赛双方球队不变，仅比较使用的球场不同的情况”是计算球场系数的前提，如果把交流战的结果包含在计算中，这个前提就不复存在。为了解决这个问题，我认为在计算球场系数时最好<strong>排除交流战的结果</strong>。</p>
+<h2 id="缺点②缺点2以“其他球场”为标准"><a href="#缺点②缺点2以“其他球场”为标准" class="headerlink" title="缺点②缺点2以“其他球场”为标准"></a>缺点②缺点2以“其他球场”为标准</h2><p>球场系数是以其他球场为基准计算的，但问题是其他球场的详细内容其实各不相同，例如，神宫和名古屋巨蛋使用的其他球场的详细内容如下所示：</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/007ieIrnly4h2qdnbrn9oj30ho099dgs.jpg" alt="20201015_pf.png"></p>
+<p>前一节计算出神宫的本垒打球场系数为1.63，名古屋巨蛋的本垒打球场系数为0.57。这意味着神宫相对于左图表中的球场可能轰出本垒打的倍数为1.63倍，名古屋巨蛋相对于右图表的球场可能轰出本垒打的倍数为0.57倍。这里所说的“1.63倍/0.57倍”的数值基准各不相同，所以严格来说其实没有定量比较。</p>
+<p>图表中可以观察到主要的差别来自灰色部分表示的“地方球场”。在日本职业棒球中，有在既不是自军主场也不是对方主场的球场进行比赛的情况，这样的球场被称为地方球场。两个球场的“其他球场”也包含了地方球场，但两者的内容完全不同。</p>
+<p>综上所述，如果要尽可能保证不同球场比较基准一致，在计算球场系数时最好将分母中其他球场里的地方场馆因素排除在外。排除交流赛和地方球场之后，神宫和名古屋巨蛋使用的其他球场的详细内容如下所示：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qe1rvrn5j30hb08d74u.jpg" alt="20201014_pfr.png"></p>
+<p>可以注意到上图其实就是除了主场以外的其它5个主场5等分的饼图，如果排除交流战和地方球场，计算出球场系数，那么其它5个主场就会成为该球场输出数值的基准。也就是说，把“与剩下5个主场平均值相比，轰出本垒打的系数”作为数值输出。</p>
+<p>这样的话，对于了解“联盟内6个主场中的相对定位”也是有用的，但是，根据计算球场的不同，使用到的其他球场的详细情况也不同，所以计算基准不同的问题还是没有解决。</p>
+<p>归根结底，这是以“其他球场”为计算基准的根本问题，因为“其他球场”不包含所计算的球场自身，所以不同的两个球场，得到的其他球场是不会相同的。这样的话，只要计算基准不是“其他球场”，而是“其他球场加上那个球场本身”就可以了。</p>
+<p>怎么样在分母的其他球场加入那个球场自身比较好呢？关于这一点，美国大型数据网站FanGraphs指出：</p>
+<blockquote>
+<p>And when you actually calculate the PF(引用者注:Park Factor=パークファクター), most people will just weigh the RPG(Runs Per Game=試合あたり得点) at home against the RPG on the road. Well, the more advanced approaches will, instead of comparing home context to road context, compare home context to league context. If there are T teams in a league, the aggregate league context is based 1/T% on each park. To sum for a team, (T-1)*Road+Home((T-1)/T% is road, 1/T% home).<br><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://library.fangraphs.com/park-factors-5-year-regressed/">Park Factors – 5 Year Regressed(FanGraphs)</a></p>
+<p>意訳</p>
+<p>パークファクターを計算する時、本拠地と他球場の成績を対比させることが多いが、  より精緻に算出するのであれば、<strong>本拠地を他球場と対比させるのではなく、リーグ平均と対比させるべきだ。</strong><em>【不是主场和其它客场比较，应该与联盟平均水平比较】</em> T個のチームが所属するリーグの場合、各球場はリーグ平均の1/Tずつを構成するため、他球場をT-1、本拠地を1と重みづけして加重平均を計算すればリーグ平均を求められる。</p>
+<p>(引用者注:この文章は得点のパークファクターについて書かれていますが、本塁打でも同じことが言えます)</p>
+</blockquote>
+<p>如果横向比较单一联盟内的球场本垒打的难易程度的话，以联盟平均值（6主场的平均值）为基准确实是合理的。不是将“主场记录的成绩”与“其他球场记录的成绩”进行比较，而是将“在主场记录的成绩”与“在6个主场均等比赛时可能记录的成绩”进行比较。</p>
+<p>联盟内的6个主场，其1/6由主场构成，5/6由其他球场构成。如果将“主场记录的成绩”加权为1，将“在其他球场记录的成绩”加权为5，进行加权平均，可以推测出“在6个主场相同比赛场数时可能得到的成绩”。如果把这个作为计算公式的分母的话，可以作为联盟平均的基准。</p>
+<h1 id="更准确的计算公式"><a href="#更准确的计算公式" class="headerlink" title="更准确的计算公式"></a>更准确的计算公式</h1><p>至此，针对上面所提到的缺点都提出了相应的对策，可以得到以下改进后的计算公式。这里作为例子给出了神宫的本垒打难易程度的计算公式：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2pjqv7k8pj30h904o74f.jpg" alt="20201024_pf2-1.png"></p>
+<p>分母为“养乐多队在6个主场相同比赛场数时可能打出的本垒打数”；</p>
+<p>分子为“养乐多队在神宫比赛中打出的本垒打数”，除以“在6个主场相同比赛场数时可能打出的本垒打数”，这个公式得到的数值代表了“相对于平均球场（6个球场的平均），神宫轰出本垒打的系数”。</p>
+<p>实际上这个公式也是“保持比赛双方球队不变在不同球场”的比较，无论是其他球场还是神宫，公式中假设养乐多与中央联盟其他5支球队均等地对战，所以其他球场和神宫结果的加权平均分母是不变的，是“养乐多与中央联盟其他5支球队均等对战的结果”。</p>
+<p>文中对神宫进行了评价，其他球场也可以使用以那里为主场的队伍成绩进行定量化。如果是这个公式的话，想要对哪个球场进行定量化分析，和“球场平均值相比，不同球场轰出本垒打的系数”为基准的计算公式不同，不会根据球场的不同而导致基准不相同，可以定量地比较数值。本网站使用这个计算公式，量化了1957年以后作为主场使用的所有球场的特性。考虑到球场的特性，比较选手成绩，在本垒打球场的影响评价中可以作为参考，读了这篇报道有兴趣的人请点击下面的链接。</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://library.fangraphs.com/park-factors-5-year-regressed/">2021年12球団パークファクター</a></p>
+<p>各球場の特性を調べました</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://library.fangraphs.com/park-factors-5-year-regressed/">セリーグ本塁打パークファクター</a></p>
+<p>1957年以降の全球場の特性を調べました</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://library.fangraphs.com/park-factors-5-year-regressed/">パリーグ本塁打パークファクター</a></p>
+<p>1957年以降の全球場の特性を調べました​​​​                       </p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%A3%92%E7%90%83/" rel="tag"># 棒球</a>
+              <a href="/tags/NPB/" rel="tag"># NPB</a>
+              <a href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag"># 翻译</a>
+              <a href="/tags/%E6%A3%92%E7%90%83%E6%95%B0%E6%8D%AE/" rel="tag"># 棒球数据</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/29/baseball/20220529/" rel="prev" title="棒球各种数据怎么看！（打者进阶数据篇）">
+      <i class="fa fa-chevron-left"></i> 棒球各种数据怎么看！（打者进阶数据篇）
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E7%90%83%E5%9C%BA"><span class="nav-number">1.</span> <span class="nav-text">如何比较球场</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E7%90%83%E5%9C%BA%E7%B3%BB%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">一般球场系数的计算公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">计算公式的缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9%E2%91%A0-%E6%8A%8A%E4%BA%A4%E6%B5%81%E6%88%98%E5%8C%85%E5%90%AB%E5%9C%A8%E8%AE%A1%E7%AE%97%E4%B8%AD"><span class="nav-number">3.1.</span> <span class="nav-text">缺点① 把交流战包含在计算中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9%E2%91%A1%E7%BC%BA%E7%82%B92%E4%BB%A5%E2%80%9C%E5%85%B6%E4%BB%96%E7%90%83%E5%9C%BA%E2%80%9D%E4%B8%BA%E6%A0%87%E5%87%86"><span class="nav-number">3.2.</span> <span class="nav-text">缺点②缺点2以“其他球场”为标准</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E5%87%86%E7%A1%AE%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">更准确的计算公式</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kala"
+      src="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+  <p class="site-author-name" itemprop="name">Kala</p>
+  <div class="site-description" itemprop="description">自言自语</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://douban.com/yourname" title="Douban → https:&#x2F;&#x2F;douban.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-quote fa-fw"></i>Douban</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kala</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

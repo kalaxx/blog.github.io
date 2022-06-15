@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="​​ 最常用的就是AVG（打率），OPB（上垒率），SLG（长打率）和OPS（进攻指数），OPS &#x3D; OPB + SLG，其它几个看名字大概就能猜到啥意思吧。最近在看下面那个网站，数据好全 ww，顺便学习了新的统计指数，本文主要是翻译+搬运，棒球真的很适合数据分析（笑） 日本プロ野球 RCAA&amp;PitchingRun まとめ blog 2022 年セリーグ・ポジション別 wRAA と先発救">
+<meta property="og:type" content="article">
+<meta property="og:title" content="棒球各种数据怎么看！（打者进阶数据篇）">
+<meta property="og:url" content="http://example.com/2022/05/29/baseball/20220529/index.html">
+<meta property="og:site_name" content="Kala&#39;s Blog">
+<meta property="og:description" content="​​ 最常用的就是AVG（打率），OPB（上垒率），SLG（长打率）和OPS（进攻指数），OPS &#x3D; OPB + SLG，其它几个看名字大概就能猜到啥意思吧。最近在看下面那个网站，数据好全 ww，顺便学习了新的统计指数，本文主要是翻译+搬运，棒球真的很适合数据分析（笑） 日本プロ野球 RCAA&amp;PitchingRun まとめ blog 2022 年セリーグ・ポジション別 wRAA と先発救">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pgw74rklj31c30fjaqn.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/007ieIrngy1h2phrfe8l7j30rs0fh777.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/large/007ieIrngy1h2pj377dn4j30rs0fl0vg.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pj2vp38rj31240fnajt.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pjiujjbwj31e50u04nz.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2pjqsosahj30h904o74f.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pknxtj7vj312o0mstte.jpg">
+<meta property="article:published_time" content="2022-05-29T13:48:00.000Z">
+<meta property="article:modified_time" content="2022-06-15T08:00:47.607Z">
+<meta property="article:author" content="Kala">
+<meta property="article:tag" content="棒球">
+<meta property="article:tag" content="NPB">
+<meta property="article:tag" content="棒球数据">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pgw74rklj31c30fjaqn.jpg">
+
+<link rel="canonical" href="http://example.com/2022/05/29/baseball/20220529/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>棒球各种数据怎么看！（打者进阶数据篇） | Kala's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Kala's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">存档基地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/29/baseball/20220529/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          棒球各种数据怎么看！（打者进阶数据篇）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-29 21:48:00" itemprop="dateCreated datePublished" datetime="2022-05-29T21:48:00+08:00">2022-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 16:00:47" itemprop="dateModified" datetime="2022-06-15T16:00:47+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A3%92%E7%90%83%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">棒球相关</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>​​ 最常用的就是<strong>AVG</strong>（打率），<strong>OPB</strong>（上垒率），<strong>SLG</strong>（长打率）和<strong>OPS</strong>（进攻指数），<strong>OPS = OPB + SLG</strong>，其它几个看名字大概就能猜到啥意思吧。最近在看下面那个网站，数据好全 ww，顺便学习了新的统计指数，本文主要是翻译+搬运，棒球真的很适合数据分析（笑）</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ranzankeikoku.blog.fc2.com/">日本プロ野球 RCAA&amp;PitchingRun まとめ blog</a></p>
+<p><strong>2022 年セリーグ・ポジション別 wRAA と先発救援別 RSAA (5/29 時点)</strong></p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pgw74rklj31c30fjaqn.jpg"></p>
+<p><font color="#42ac6f"><strong>wRAA 和 wRC+ 是什么意思呢？</strong></font></p>
+<ul>
+<li><strong>wRAA 是和平均打者相比能为球队多带来多少得分的数值化指标。</strong></li>
+<li><strong>wRC+是和平均打者相比能为球队多带来百分之多少的得分。</strong></li>
+</ul>
+<h2 id="wRAA计算公式"><a href="#wRAA计算公式" class="headerlink" title="wRAA计算公式"></a>wRAA计算公式</h2><blockquote>
+<p><strong>wRAA</strong> = （wOBA － 联盟平均 wOBA）÷ 1.24 × 打席数</p>
+</blockquote>
+<p>不过 wRC+的计算公式会更加复杂，这个我们稍后再谈，先说一下什么是 <strong>wOBA</strong>。</p>
+<p>B 站有大大翻译了国外别人做的视频：<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://www.bilibili.com/video/BV1a34y1D7i1?">【熟肉】棒球小知识之为啥 wOBA 是 MLB 最重要的进攻数据？</a></p>
+<p><img src="https://wx2.sinaimg.cn/large/007ieIrngy1h2phrfe8l7j30rs0fh777.jpg"></p>
+<p>简而言之，就是打率、上垒率、长打率、甚至是后边的 OPS（上垒率+长打率）都不够直观，上垒率的价值应该比长打率更高一点，所以引入了系数。</p>
+<blockquote>
+<p><strong>wOBA</strong> = (0.690×uBB + 0.719×HBP + 0.870×1B + 1.217×2B + 1.529×3B + 1.940×HR) / (AB + BB – IBB + SF + HBP)</p>
+</blockquote>
+<p><em>【注意：系数每年可能会变化，但整个公式框架如上所示】</em></p>
+<p>式中，<strong>BB</strong>（四坏球保送），<strong>IBB</strong>（故意四坏保送），<strong>HBP</strong>（触身球保送），<strong>1B</strong>（一垒安打），<strong>2B</strong>（二垒安打），<strong>3B</strong>（三垒安打），<strong>HR</strong>（全垒打），<strong>AB</strong>（打席数），<strong>SF</strong>（牺牲高飞）。</p>
+<p><strong>可以看出，全垒打的价值约等于一垒安打的2.2倍，二垒安打的1.6倍，三垒安打的1.3倍。</strong></p>
+<p>通过简单的计算，就可以得到 wRAA，可以更加直观的看出一个打者相较于本联盟的平均水平攻击能力的好坏，也可以看出一个球队相较于联盟中其他球队进攻水平的好坏，让我们再来看看文中一开始贴的那张图，左边部分：</p>
+<p><img src="https://wx3.sinaimg.cn/large/007ieIrngy1h2pj377dn4j30rs0fl0vg.jpg"></p>
+<blockquote>
+<p>※ヤクルト打線は[wRAA]3.1,[wRC+]102 を記録。平均的な打線と比べて 3.1 点分多く得点を生み出し、1.02 倍の得点創出力を持つことを示す。<br><font color="#FC6423">【养乐多的打线比起央联平均水平可以多得 <strong>3.1</strong> 分，是平均得点创造力的 <strong>1.02</strong> 倍】</font></p>
+</blockquote>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pj2vp38rj31240fnajt.jpg"></p>
+<p>表格的右边则展示了球队不同位置的进攻能力.</p>
+<blockquote>
+<p>※右の数値は wRAA をポジション別に分解したものです。ヤクルトの三塁手は平均的な三塁手と比べて 13.0 点分多く得点を生み出したことを示す。<font color="#FC6423">【右边的数值是不同位置的对比，养乐多的三垒手比起三垒手的平均得点水平可以多得 <strong>13</strong> 分】</font></p>
+</blockquote>
+<p>已经大致了解 wOBA 和 wRAA后，接下来考虑一下：</p>
+<h2 id="wRC-和它们的区别是什么呢？"><a href="#wRC-和它们的区别是什么呢？" class="headerlink" title="wRC+和它们的区别是什么呢？"></a>wRC+和它们的区别是什么呢？</h2><p><font color="#42ac6f"><strong>wRC+还考虑到了不同球场之间的差别，并对此进行了修正。</strong></font></p>
+<p>图上的网站采用的是：※球場の影響補正は 2019 年-2021 年のデータを使用して実施しました。【2019-2021 年的数据】，让我们来看看今年的球场别：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pjiujjbwj31e50u04nz.jpg"></p>
+<p>具体的计算过程请自行阅读：<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ranzankeikoku.blog.fc2.com/blog-entry-2795.html">パークファクターはどのような考え方で算出されるか</a> 或者是我的<a href="/source/_posts/baseball/20220530.md">翻译版本</a>：</p>
+<p>大致的意思就是球场长得都不一样，打出去的难度也不一样，所以需要一个量化的数据，文中举的例子是神宫轰出去的难度远低于名蛋，不过衡量球轰出去难度的时候也要考虑打者/投手的水平，这个网站给出的解决方法如下：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2pjqsosahj30h904o74f.jpg" alt="20201024_pf2-1.png"></p>
+<p>这个公式尽可能减少了球员带来的影响，但是球员个人击球水平说实话也是浮动的，不过样本数足够大的时候其实影响不大。</p>
+<p>​ 截止 5/29，今年中央联盟最容易轰的球场居然不是神宫（2021 年 ①），是横滨 Stadium，神宫今年居然屈居第四，最难轰的球场是甲子园。历年的数据见：<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ranzankeikoku.blog.fc2.com/blog-entry-2525.html">セリーグ本塁打パークファクター[1957-] </a><font color="#999999">（今年神宫真的很怪，数据可知不是错觉）</font></p>
+<p>​ 就像全垒打的价值和常见的一垒安打不一样，不同球场轰出去的价值对一个野手来说也是不一样的，说回 <strong>wRC+</strong></p>
+<blockquote>
+<p><strong>wRC+</strong>=(考虑球场因素的 wRC÷ 打席)÷(联盟总得点 ÷ 联盟总打席)</p>
+</blockquote>
+<blockquote>
+<p><strong>wRC</strong>=((wOBA-联盟平均 wOBA)÷1.24+联盟总得点 ÷ 联盟总打席)× 打席</p>
+</blockquote>
+<p>计算公式不重要，重要的是 wRC+是排除球场因素，排除打席数影响，相对最纯粹判断一个打者攻击能力的指数。回到第一张图，可以看到虽然 wRAA 不尽相同，但是大家的 wRC+数值并没有差的很大（除了阪神），这是因为考虑到不同球场得分难度，对其进行了加权处理。</p>
+<p>看过了球团之间的区别，来看一下选手个人之间的差别，选取了中央联盟前 15：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pknxtj7vj312o0mstte.jpg"></p>
+<p>​ 图中，左边的数据很好理解，右边的话，<strong>BABIP</strong>(进场内安打率) = （安打数-本垒打数）/（打数-本垒打数-三振数+牺牲打），<strong>K%<strong>（三振率），</strong>ISO</strong>（长打率），然后图上+或者-的都是代表这个数据进行了球场修正。</p>
+<blockquote>
+<p>※牧秀悟(DeNA)は[wRAA]20.2、[wRC+]223 を記録。平均的な野手と比べて 20.2 点分得点を多く生み出し、2.23 倍の得点創出力を持つことを示す。</br><br>※牧秀悟(DeNA)は[BABIP+]111、[K%-]92、[BB%+]144、[ISO+]274 を記録。こちらは打撃スタイルを捉えることを狙いとした指標であり、平均的な野手と比べて 1.11 倍の BABIP を記録し、0.92 倍の三振、1.44 倍の四球を出し、2.74 倍の ISO を記録したことを示す。(球場補正あり)<font color="#FC6423">【可以看出，maki 相比央联平均野手多得 <strong>20.2</strong> 分，有 <strong>2.23</strong> 倍的得点创造力，非常厉害的是他不是那种只能靠轰得分的选手，场内安打率也非常高，并且较少被三振。】</font></p>
+</blockquote>
+<p>这个 blog 里还有历代排名数据、现役排名数据、球团内排名数据，不同守备位置的排名数据，还是蛮有意思的，但不得不吐槽：<strong>棒球真的有太多数据啦！</strong>​​​​</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%A3%92%E7%90%83/" rel="tag"># 棒球</a>
+              <a href="/tags/NPB/" rel="tag"># NPB</a>
+              <a href="/tags/%E6%A3%92%E7%90%83%E6%95%B0%E6%8D%AE/" rel="tag"># 棒球数据</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/25/baseball/20220525/" rel="prev" title="【翻译】「你和父母告密了！」横滨高中棒球部退部选手的父亲坦白职权骚扰内容">
+      <i class="fa fa-chevron-left"></i> 【翻译】「你和父母告密了！」横滨高中棒球部退部选手的父亲坦白职权骚扰内容
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/30/baseball/20220530/" rel="next" title="【翻译】球场系数（Park Factor）是如何得到的？">
+      【翻译】球场系数（Park Factor）是如何得到的？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#wRAA%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">wRAA计算公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wRC-%E5%92%8C%E5%AE%83%E4%BB%AC%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">wRC+和它们的区别是什么呢？</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kala"
+      src="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+  <p class="site-author-name" itemprop="name">Kala</p>
+  <div class="site-description" itemprop="description">自言自语</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://douban.com/yourname" title="Douban → https:&#x2F;&#x2F;douban.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-quote fa-fw"></i>Douban</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kala</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

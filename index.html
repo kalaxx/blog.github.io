@@ -1,312 +1,1428 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-hans">
+<html lang="zh-CN">
 <head>
-  
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>存档基地 [ Kala&#39;s Blog ]</title>
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-  <link rel="icon" href="/img/favicon.ico">
-
-
-    <meta name="author" content="Kala">
-
-
-    <meta name="subtitle" content="存档基地">
-
-
-    <meta name="Description" content="自言自语">
-
-
-    <meta name="keywords" content=",棒球 文学 影视 日韩">
-
-
-  <link rel="alternate" href="/atom.xml " title="Kala&#39;s Blog" type="application/atom+xml">
-
-
-  
-    <link rel="stylesheet" href="/css/main.css">
-  
-
-<meta name="generator" content="Hexo 5.4.2"></head>
-  <body data-theme="light" class="notransition">
-    <script>
-      const body = document.body;
-      const data = body.getAttribute("data-theme");
-      const initTheme = (state) => {
-        if (state === "dark") {
-          body.setAttribute("data-theme", "dark");
-        } else if (state === "light") {
-          body.removeAttribute("data-theme");
-        } else {
-          localStorage.setItem("theme", data);
-        }
-      };
-   
-      initTheme(localStorage.getItem("theme"));
-      
-      setTimeout(() => body.classList.remove("notransition"), 75);
-    </script>
-  <div class="navbar" role="navigation">
-    <nav class="menu">
-      <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-      <label for="menu-trigger">
-        <span class="menu-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 512 512"
-          >
-            <path
-              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
-            />
-          </svg>
-        </span>
-      </label>
-      <a id="mode">
-        <svg
-          class="mode-sunny"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 512 512"
-        >
-          <title>LIGHT</title>
-          <line
-            x1="256"
-            y1="48"
-            x2="256"
-            y2="96"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="256"
-            y1="416"
-            x2="256"
-            y2="464"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="403.08"
-            y1="108.92"
-            x2="369.14"
-            y2="142.86"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="142.86"
-            y1="369.14"
-            x2="108.92"
-            y2="403.08"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="464"
-            y1="256"
-            x2="416"
-            y2="256"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="96"
-            y1="256"
-            x2="48"
-            y2="256"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="403.08"
-            y1="403.08"
-            x2="369.14"
-            y2="369.14"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="142.86"
-            y1="142.86"
-            x2="108.92"
-            y2="108.92"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <circle
-            cx="256"
-            cy="256"
-            r="80"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-        </svg>
-        <svg
-          class="mode-moon"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 512 512"
-        >
-          <title>DARK</title>
-          <line
-            x1="256"
-            y1="48"
-            x2="256"
-            y2="96"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="256"
-            y1="416"
-            x2="256"
-            y2="464"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="403.08"
-            y1="108.92"
-            x2="369.14"
-            y2="142.86"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="142.86"
-            y1="369.14"
-            x2="108.92"
-            y2="403.08"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="464"
-            y1="256"
-            x2="416"
-            y2="256"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="96"
-            y1="256"
-            x2="48"
-            y2="256"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="403.08"
-            y1="403.08"
-            x2="369.14"
-            y2="369.14"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="142.86"
-            y1="142.86"
-            x2="108.92"
-            y2="108.92"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <circle
-            cx="256"
-            cy="256"
-            r="80"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-        </svg>
-      </a>
-      <div class="trigger">
-        <div class="trigger-container">
-          
-            
-            
-            
-            
-            
-            
-            <a class="menu-link active" href="/"> Home</a>
-          
-            
-            
-            
-            
-            
-            
-            <a class="menu-link " href="/about/"> About</a>
-          
-            
-            
-            
-            
-            
-            
-            <a class="menu-link " href="/archives/"> Archives</a>
-          
-            
-            
-            
-            
-            
-            
-            <a class="menu-link " href="/tags/"> Tags</a>
-          
-        </div>
-      </div>
-    </nav>
-  </div>
-  
-  <div class="wrapper">
-    <div class="author">
-        <div class="author-avatar-wrapper">
-          <img
-            class="author-avatar"
-            src="https://cdn.jsdelivr.net/gh/dewjohn/CDN@latest/images/avatar.webp"
-            alt="avatar"
-            loading="lazy"
-          />
-      </div>
-      <h2 class="author-name">Kala</h2>
-      <p class="author-bio">I just want something simpler...</p>
-    </div>
-    <main aria-label="Content">
-      
-
-    <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
-    
-      <article class="post-item">
-        <span class="post-item-date" datetime="2022-06-14T12:54:08.905Z">Jun 14, 2022</span>
-        <h4 class="post-item-title">
-          <a href="/2022/06/14/hello-world/">Hello World</a>
-        </h4>
-      </article>
-    
-
-
-    </main>
-  </div>
-
-  <footer class="footer">
-    <small class="footer_copyright">
-      <div id="bottom-inner">
-        © 2021 Site by Kala using
-        <a target="_blank" rel="noopener" href="http://hexo.io">hexo blog framework</a>.
-        <br>
-        <p> Theme is <a target="_blank" rel="noopener" href="https://github.com/dewjohn/hexo-theme-klise">Klise</a></p>
-      </div>
-    </small>
-  </footer>
-  
-  
-
-    
-      <script src="/js/main.js"></script>
-    
-  
-  <script>
-    window.FPConfig = {
-      delay: 0,
-      ignoreKeywords: [],
-      maxRPS: 3,
-      hoverDelay: 50,
-    };
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-  <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+
+  <meta name="description" content="自言自语">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kala&#39;s Blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Kala&#39;s Blog">
+<meta property="og:description" content="自言自语">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Kala">
+<meta property="article:tag" content="棒球 文学 影视 日韩">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Kala's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Kala's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">存档基地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/baseball/20220530/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/30/baseball/20220530/" class="post-title-link" itemprop="url">【翻译】球场系数（Park Factor）是如何得到的？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-30 22:40:00" itemprop="dateCreated datePublished" datetime="2022-05-30T22:40:00+08:00">2022-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 15:56:05" itemprop="dateModified" datetime="2022-06-15T15:56:05+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A3%92%E7%90%83%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">棒球相关</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>Park Factor，パークファクター，球场系数</p>
+</blockquote>
+<p>​​原文地址：<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ranzankeikoku.blog.fc2.com/blog-entry-2795.html">パークファクターはどのような考え方で算出されるか</a></p>
+<blockquote>
+<p>球场与球场之间，两翼之间、中坚的距离、围栏的高度都是不一样的，左右形状不对称的球场有很多，棒球是唯一可以在这种条件下进行的运动。（中略）尽管如此，本垒打数作为官方记录，并且拥有自己的头衔，并不是一个公平的记录，但没有人抱怨，并认为是理所当然的。</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://www.sanspo.com/article/20170616-OLZT6HA3UFJXVOBXI5JVM5K6VU/2/">やっぱりホームランは野球の“華”(SANSPO.com/小早川毅彦のベースボールカルテ)</a></p>
+</blockquote>
+<p>近年来，人们设计了几种方法来量化球场的影响，并将这个数值称为“<strong>球场系数</strong>”（Park Factor）。 球场系数不仅是了解球场特点的线索，还可以用于考虑球场差异后比较不同选手的成绩。在这篇文章中，笔者将解释这个球场系数是如何计算得出的。</p>
+<h1 id="如何比较球场"><a href="#如何比较球场" class="headerlink" title="如何比较球场"></a>如何比较球场</h1><p>首先举一个简单的例子，来看看怎么比较球场，这里我们比较了明治神宫野球场（后简称神宫）和名古屋巨蛋（后简称名蛋）：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qanre7ifj30b604v0sr.jpg" alt="20201105_pf3.png"></p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qaowv2u8j30b904saa3.jpg" alt="20201105_pf2.png"></p>
+<p>在围栏更近且更低的神宫，更容易打出本垒打。但仅从从围栏数据中，我们还是不知道“在神宫比在名蛋轰出本垒打容易<strong>多少倍</strong>”。因此，考虑是否有可能从两个球场的记录中以某种方式量化轰出本垒打的难易程度。</p>
+<p>比较一下在神宫和名蛋打出的本垒打数怎么样？每年两个球场都会举行大约70场比赛，但哪个球场的本垒打最多？如图所示，每年在两个球场打出的本垒打数（场均）。</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qayl446vj30do07374a.jpg" alt="20201003_pf.png"></p>
+<p>可以看出，每年神宫轰出的本垒打数都是名蛋的倍数，在此期间内，神宫每场比赛的本垒打数为  2.36 轰，名蛋为 1.09 轰。也就是说，2.36 ÷ 1.09 = 2.17，可以说：“在神宫打出本垒打容易2.17倍”……</p>
+<p>正如你们中的许多人可能已经注意到的那样，这个方法存在缺陷，通过观察在这两个球场进行比赛的球队比赛分布图，就可以发现问题所在。</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/007ieIrnly4h2qb7bh51ij30gr084wew.jpg" alt="20201010_pf.png"></p>
+<p>问题在于，使用球场的队伍是不一样的，所以在各个球场打出的本垒打数无法直接比较。这是因为日本职棒都有义务拥有一个主场，主场的比赛组合必然是：以这个地方为主场的球队对战其他队伍。</p>
+<p>比方说，神宫的比赛就全是养乐多vs其他队伍，如果养乐多队有很多长距离炮，那么神宫的本垒打数理所当然会多。当时，养乐多有经验丰富的本垒打王和NPB赛季本垒打纪录保持者，所以上面的猜测事可能发生的。</p>
+<p>那么如何比较两个球场的本垒打数呢？看上面的图表，有没有注意到“养乐多vs中日”的比赛在两个球场都会举办？如果只比较这一对阵的本垒打数，可以避免球队不同带来的问题。</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qbhet7foj30di0740sr.jpg" alt="20201003_pf2.png"></p>
+<p>在两个球场都举行了养乐多vs中日的比赛，而每年神宫轰出的本垒打数依旧都是名蛋的倍数。有理由认为，这并不是因为养乐多有很多长距离炮，而是反映了两个球场的差异。在这两个球队的比赛中，神宫每场比赛的本垒打数为 2.67 轰，名蛋为 1.10 轰。也就是说：“在神宫打出本垒打容易2.42倍(=2.67÷1.10)”</p>
+<p>这样，“保持比赛双方球队不变，仅比较使用的球场不同的情况”是计算球场系数的基本思路。但是，这样我们只能按比较两个球场的差异，因此我们将在下一节讨论比较三个或更多球场的理论。</p>
+<h1 id="一般球场系数的计算公式"><a href="#一般球场系数的计算公式" class="headerlink" title="一般球场系数的计算公式"></a>一般球场系数的计算公式</h1><p>这六只队伍所在的中央联盟就有六个主场，这样两个两个比较十分不便。因此，提出一个“球场系数”的指标可以横向比较三个及三个以上的球场。</p>
+<p>特点是“主场和主场以外的球场比较”的想法，比如神宫的易轰程度是基于以神宫为主场的养乐多队的比赛数据得出的。把养乐多比赛中所有打出的本垒打数作为全体，把在神宫击出的本垒打数和在其它球场击出的本垒打数进行比较。</p>
+<p>养乐多一年中有一半的时间在神宫比赛，剩下的一半在其它队伍的主场比赛。通过神宫和其它球场的比较，我们可以定量化“在几个主场中神宫的易轰程度出生于什么位置”，如果把它写成公式，可以以如下的形式表示：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qcc9pw2jj30gk0330sp.jpg" alt="20201024_pf1-1.png"></p>
+<p>在神宫举行的“养乐多 vs 其他球队”比赛中打出的本垒打数（场均），除以在其他球场举行的“养乐多 vs 其他球队”比赛中打出的本垒打数（场均），这是最常见的球场系数的计算公式。（参考<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ja.wikipedia.org/wiki/%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25AF%25E3%2583%2595%25E3%2582%25A1%25E3%2582%25AF%25E3%2582%25BF%25E3%2583%25BC">Wikipedia</a> 和<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://1point02.jp/op/gnav/glossary/gls_explanation.aspx?eid=20016"> 1.02 –Essense of Baseball</a>）</p>
+<p>这个公式的优点在于，分母和分子都选取的是“保持比赛双方球队不变，仅比较使用的球场不同的情况”。因为养乐多和每支队伍交手的时候，原则上它会在客场和神宫打同样场次的比赛，养乐多在神宫比赛的多少场，那么去其它球队的主场也会打多少场。神宫以外的球场也可以使用以它们为主场的球队的比赛结果来计算。</p>
+<p>以下是使用该方法对中央联盟6个球场本垒打难易程度的评测，取的数值为2017-2019年的平均值。</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qczhw2wsj30ab068jre.jpg" alt="20200920_pf3.png"></p>
+<p>如图所示，展示了与中央联盟使用的球场平均值相比，不同球场轰出本垒打的系数。神宫、东京巨蛋、横滨更容易打出本垒打，马自达、甲子园、名古屋巨蛋好像是很难打出本垒打的球场。用一般球场系数的计算公式中，可以这样评价各球场本垒打的难易程度。</p>
+<h1 id="计算公式的缺点"><a href="#计算公式的缺点" class="headerlink" title="计算公式的缺点"></a>计算公式的缺点</h1><p>到这里为止，在球场系数的计算公式中，我们得到了最正统的公式。但是，这个公式在定量比较各球场方面有两个明显的缺点。最后，在明确这些缺点为什么会成为问题的基础上，我们将推导出包含对策的优化后计算公式。</p>
+<h2 id="缺点①-把交流战包含在计算中"><a href="#缺点①-把交流战包含在计算中" class="headerlink" title="缺点① 把交流战包含在计算中"></a>缺点① 把交流战包含在计算中</h2><blockquote>
+<p>プロ野球のスケジュールが８年ぶりに姿を変える。１２球団代表者会議が１１日、都内で開かれ、来季の交流戦を現行の２４試合制から１８試合制へ変更することで合意した。（中略） ２４試合制では各カード４試合（ホーム、ビジター各２試合）だったが、１８試合制では各カード３試合となり、隔年でホームとビジターで３連戦を戦う形に変わる。<br><em>【简而言之，现在的交流战一个赛季只有主场or只有客场的3场比赛，以前是2场主场、2场客场。】</em><br><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://www.nikkansports.com/baseball/news/p-bb-tp0-20140812-1349482.html">交流戦18試合制で合意　セがパ押し切る(日刊スポーツ)</a></p>
+</blockquote>
+<p>交流战从2015年开始变成了上面提到的18场比赛制。虽然和央联和洋联球队各对战3场，但这3场比赛只使用主场或客场其中一个球场，也就是说，对于对战的两支队伍，交流战中会存在“只在主场对战的队伍”和“只在客场对战的队伍”。</p>
+<p>“保持比赛双方球队不变，仅比较使用的球场不同的情况”是计算球场系数的前提，如果把交流战的结果包含在计算中，这个前提就不复存在。为了解决这个问题，我认为在计算球场系数时最好<strong>排除交流战的结果</strong>。</p>
+<h2 id="缺点②缺点2以“其他球场”为标准"><a href="#缺点②缺点2以“其他球场”为标准" class="headerlink" title="缺点②缺点2以“其他球场”为标准"></a>缺点②缺点2以“其他球场”为标准</h2><p>球场系数是以其他球场为基准计算的，但问题是其他球场的详细内容其实各不相同，例如，神宫和名古屋巨蛋使用的其他球场的详细内容如下所示：</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/007ieIrnly4h2qdnbrn9oj30ho099dgs.jpg" alt="20201015_pf.png"></p>
+<p>前一节计算出神宫的本垒打球场系数为1.63，名古屋巨蛋的本垒打球场系数为0.57。这意味着神宫相对于左图表中的球场可能轰出本垒打的倍数为1.63倍，名古屋巨蛋相对于右图表的球场可能轰出本垒打的倍数为0.57倍。这里所说的“1.63倍/0.57倍”的数值基准各不相同，所以严格来说其实没有定量比较。</p>
+<p>图表中可以观察到主要的差别来自灰色部分表示的“地方球场”。在日本职业棒球中，有在既不是自军主场也不是对方主场的球场进行比赛的情况，这样的球场被称为地方球场。两个球场的“其他球场”也包含了地方球场，但两者的内容完全不同。</p>
+<p>综上所述，如果要尽可能保证不同球场比较基准一致，在计算球场系数时最好将分母中其他球场里的地方场馆因素排除在外。排除交流赛和地方球场之后，神宫和名古屋巨蛋使用的其他球场的详细内容如下所示：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2qe1rvrn5j30hb08d74u.jpg" alt="20201014_pfr.png"></p>
+<p>可以注意到上图其实就是除了主场以外的其它5个主场5等分的饼图，如果排除交流战和地方球场，计算出球场系数，那么其它5个主场就会成为该球场输出数值的基准。也就是说，把“与剩下5个主场平均值相比，轰出本垒打的系数”作为数值输出。</p>
+<p>这样的话，对于了解“联盟内6个主场中的相对定位”也是有用的，但是，根据计算球场的不同，使用到的其他球场的详细情况也不同，所以计算基准不同的问题还是没有解决。</p>
+<p>归根结底，这是以“其他球场”为计算基准的根本问题，因为“其他球场”不包含所计算的球场自身，所以不同的两个球场，得到的其他球场是不会相同的。这样的话，只要计算基准不是“其他球场”，而是“其他球场加上那个球场本身”就可以了。</p>
+<p>怎么样在分母的其他球场加入那个球场自身比较好呢？关于这一点，美国大型数据网站FanGraphs指出：</p>
+<blockquote>
+<p>And when you actually calculate the PF(引用者注:Park Factor=パークファクター), most people will just weigh the RPG(Runs Per Game=試合あたり得点) at home against the RPG on the road. Well, the more advanced approaches will, instead of comparing home context to road context, compare home context to league context. If there are T teams in a league, the aggregate league context is based 1/T% on each park. To sum for a team, (T-1)*Road+Home((T-1)/T% is road, 1/T% home).<br><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://library.fangraphs.com/park-factors-5-year-regressed/">Park Factors – 5 Year Regressed(FanGraphs)</a></p>
+<p>意訳</p>
+<p>パークファクターを計算する時、本拠地と他球場の成績を対比させることが多いが、  より精緻に算出するのであれば、<strong>本拠地を他球場と対比させるのではなく、リーグ平均と対比させるべきだ。</strong><em>【不是主场和其它客场比较，应该与联盟平均水平比较】</em> T個のチームが所属するリーグの場合、各球場はリーグ平均の1/Tずつを構成するため、他球場をT-1、本拠地を1と重みづけして加重平均を計算すればリーグ平均を求められる。</p>
+<p>(引用者注:この文章は得点のパークファクターについて書かれていますが、本塁打でも同じことが言えます)</p>
+</blockquote>
+<p>如果横向比较单一联盟内的球场本垒打的难易程度的话，以联盟平均值（6主场的平均值）为基准确实是合理的。不是将“主场记录的成绩”与“其他球场记录的成绩”进行比较，而是将“在主场记录的成绩”与“在6个主场均等比赛时可能记录的成绩”进行比较。</p>
+<p>联盟内的6个主场，其1/6由主场构成，5/6由其他球场构成。如果将“主场记录的成绩”加权为1，将“在其他球场记录的成绩”加权为5，进行加权平均，可以推测出“在6个主场相同比赛场数时可能得到的成绩”。如果把这个作为计算公式的分母的话，可以作为联盟平均的基准。</p>
+<h1 id="更准确的计算公式"><a href="#更准确的计算公式" class="headerlink" title="更准确的计算公式"></a>更准确的计算公式</h1><p>至此，针对上面所提到的缺点都提出了相应的对策，可以得到以下改进后的计算公式。这里作为例子给出了神宫的本垒打难易程度的计算公式：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2pjqv7k8pj30h904o74f.jpg" alt="20201024_pf2-1.png"></p>
+<p>分母为“养乐多队在6个主场相同比赛场数时可能打出的本垒打数”；</p>
+<p>分子为“养乐多队在神宫比赛中打出的本垒打数”，除以“在6个主场相同比赛场数时可能打出的本垒打数”，这个公式得到的数值代表了“相对于平均球场（6个球场的平均），神宫轰出本垒打的系数”。</p>
+<p>实际上这个公式也是“保持比赛双方球队不变在不同球场”的比较，无论是其他球场还是神宫，公式中假设养乐多与中央联盟其他5支球队均等地对战，所以其他球场和神宫结果的加权平均分母是不变的，是“养乐多与中央联盟其他5支球队均等对战的结果”。</p>
+<p>文中对神宫进行了评价，其他球场也可以使用以那里为主场的队伍成绩进行定量化。如果是这个公式的话，想要对哪个球场进行定量化分析，和“球场平均值相比，不同球场轰出本垒打的系数”为基准的计算公式不同，不会根据球场的不同而导致基准不相同，可以定量地比较数值。本网站使用这个计算公式，量化了1957年以后作为主场使用的所有球场的特性。考虑到球场的特性，比较选手成绩，在本垒打球场的影响评价中可以作为参考，读了这篇报道有兴趣的人请点击下面的链接。</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://library.fangraphs.com/park-factors-5-year-regressed/">2021年12球団パークファクター</a></p>
+<p>各球場の特性を調べました</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://library.fangraphs.com/park-factors-5-year-regressed/">セリーグ本塁打パークファクター</a></p>
+<p>1957年以降の全球場の特性を調べました</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://library.fangraphs.com/park-factors-5-year-regressed/">パリーグ本塁打パークファクター</a></p>
+<p>1957年以降の全球場の特性を調べました​​​​                       </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/29/baseball/20220529/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/29/baseball/20220529/" class="post-title-link" itemprop="url">棒球各种数据怎么看！（打者进阶数据篇）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-29 21:48:00" itemprop="dateCreated datePublished" datetime="2022-05-29T21:48:00+08:00">2022-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 16:00:47" itemprop="dateModified" datetime="2022-06-15T16:00:47+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A3%92%E7%90%83%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">棒球相关</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>​​ 最常用的就是<strong>AVG</strong>（打率），<strong>OPB</strong>（上垒率），<strong>SLG</strong>（长打率）和<strong>OPS</strong>（进攻指数），<strong>OPS = OPB + SLG</strong>，其它几个看名字大概就能猜到啥意思吧。最近在看下面那个网站，数据好全 ww，顺便学习了新的统计指数，本文主要是翻译+搬运，棒球真的很适合数据分析（笑）</p>
+<p><a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ranzankeikoku.blog.fc2.com/">日本プロ野球 RCAA&amp;PitchingRun まとめ blog</a></p>
+<p><strong>2022 年セリーグ・ポジション別 wRAA と先発救援別 RSAA (5/29 時点)</strong></p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pgw74rklj31c30fjaqn.jpg"></p>
+<p><font color="#42ac6f"><strong>wRAA 和 wRC+ 是什么意思呢？</strong></font></p>
+<ul>
+<li><strong>wRAA 是和平均打者相比能为球队多带来多少得分的数值化指标。</strong></li>
+<li><strong>wRC+是和平均打者相比能为球队多带来百分之多少的得分。</strong></li>
+</ul>
+<h2 id="wRAA计算公式"><a href="#wRAA计算公式" class="headerlink" title="wRAA计算公式"></a>wRAA计算公式</h2><blockquote>
+<p><strong>wRAA</strong> = （wOBA － 联盟平均 wOBA）÷ 1.24 × 打席数</p>
+</blockquote>
+<p>不过 wRC+的计算公式会更加复杂，这个我们稍后再谈，先说一下什么是 <strong>wOBA</strong>。</p>
+<p>B 站有大大翻译了国外别人做的视频：<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://www.bilibili.com/video/BV1a34y1D7i1?">【熟肉】棒球小知识之为啥 wOBA 是 MLB 最重要的进攻数据？</a></p>
+<p><img src="https://wx2.sinaimg.cn/large/007ieIrngy1h2phrfe8l7j30rs0fh777.jpg"></p>
+<p>简而言之，就是打率、上垒率、长打率、甚至是后边的 OPS（上垒率+长打率）都不够直观，上垒率的价值应该比长打率更高一点，所以引入了系数。</p>
+<blockquote>
+<p><strong>wOBA</strong> = (0.690×uBB + 0.719×HBP + 0.870×1B + 1.217×2B + 1.529×3B + 1.940×HR) / (AB + BB – IBB + SF + HBP)</p>
+</blockquote>
+<p><em>【注意：系数每年可能会变化，但整个公式框架如上所示】</em></p>
+<p>式中，<strong>BB</strong>（四坏球保送），<strong>IBB</strong>（故意四坏保送），<strong>HBP</strong>（触身球保送），<strong>1B</strong>（一垒安打），<strong>2B</strong>（二垒安打），<strong>3B</strong>（三垒安打），<strong>HR</strong>（全垒打），<strong>AB</strong>（打席数），<strong>SF</strong>（牺牲高飞）。</p>
+<p><strong>可以看出，全垒打的价值约等于一垒安打的2.2倍，二垒安打的1.6倍，三垒安打的1.3倍。</strong></p>
+<p>通过简单的计算，就可以得到 wRAA，可以更加直观的看出一个打者相较于本联盟的平均水平攻击能力的好坏，也可以看出一个球队相较于联盟中其他球队进攻水平的好坏，让我们再来看看文中一开始贴的那张图，左边部分：</p>
+<p><img src="https://wx3.sinaimg.cn/large/007ieIrngy1h2pj377dn4j30rs0fl0vg.jpg"></p>
+<blockquote>
+<p>※ヤクルト打線は[wRAA]3.1,[wRC+]102 を記録。平均的な打線と比べて 3.1 点分多く得点を生み出し、1.02 倍の得点創出力を持つことを示す。<br><font color="#FC6423">【养乐多的打线比起央联平均水平可以多得 <strong>3.1</strong> 分，是平均得点创造力的 <strong>1.02</strong> 倍】</font></p>
+</blockquote>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pj2vp38rj31240fnajt.jpg"></p>
+<p>表格的右边则展示了球队不同位置的进攻能力.</p>
+<blockquote>
+<p>※右の数値は wRAA をポジション別に分解したものです。ヤクルトの三塁手は平均的な三塁手と比べて 13.0 点分多く得点を生み出したことを示す。<font color="#FC6423">【右边的数值是不同位置的对比，养乐多的三垒手比起三垒手的平均得点水平可以多得 <strong>13</strong> 分】</font></p>
+</blockquote>
+<p>已经大致了解 wOBA 和 wRAA后，接下来考虑一下：</p>
+<h2 id="wRC-和它们的区别是什么呢？"><a href="#wRC-和它们的区别是什么呢？" class="headerlink" title="wRC+和它们的区别是什么呢？"></a>wRC+和它们的区别是什么呢？</h2><p><font color="#42ac6f"><strong>wRC+还考虑到了不同球场之间的差别，并对此进行了修正。</strong></font></p>
+<p>图上的网站采用的是：※球場の影響補正は 2019 年-2021 年のデータを使用して実施しました。【2019-2021 年的数据】，让我们来看看今年的球场别：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pjiujjbwj31e50u04nz.jpg"></p>
+<p>具体的计算过程请自行阅读：<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ranzankeikoku.blog.fc2.com/blog-entry-2795.html">パークファクターはどのような考え方で算出されるか</a> 或者是我的<a href="/source/_posts/baseball/20220530.md">翻译版本</a>：</p>
+<p>大致的意思就是球场长得都不一样，打出去的难度也不一样，所以需要一个量化的数据，文中举的例子是神宫轰出去的难度远低于名蛋，不过衡量球轰出去难度的时候也要考虑打者/投手的水平，这个网站给出的解决方法如下：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrnly4h2pjqsosahj30h904o74f.jpg" alt="20201024_pf2-1.png"></p>
+<p>这个公式尽可能减少了球员带来的影响，但是球员个人击球水平说实话也是浮动的，不过样本数足够大的时候其实影响不大。</p>
+<p>​ 截止 5/29，今年中央联盟最容易轰的球场居然不是神宫（2021 年 ①），是横滨 Stadium，神宫今年居然屈居第四，最难轰的球场是甲子园。历年的数据见：<a target="_blank" rel="noopener" href="https://weibo.cn/sinaurl?u=https://ranzankeikoku.blog.fc2.com/blog-entry-2525.html">セリーグ本塁打パークファクター[1957-] </a><font color="#999999">（今年神宫真的很怪，数据可知不是错觉）</font></p>
+<p>​ 就像全垒打的价值和常见的一垒安打不一样，不同球场轰出去的价值对一个野手来说也是不一样的，说回 <strong>wRC+</strong></p>
+<blockquote>
+<p><strong>wRC+</strong>=(考虑球场因素的 wRC÷ 打席)÷(联盟总得点 ÷ 联盟总打席)</p>
+</blockquote>
+<blockquote>
+<p><strong>wRC</strong>=((wOBA-联盟平均 wOBA)÷1.24+联盟总得点 ÷ 联盟总打席)× 打席</p>
+</blockquote>
+<p>计算公式不重要，重要的是 wRC+是排除球场因素，排除打席数影响，相对最纯粹判断一个打者攻击能力的指数。回到第一张图，可以看到虽然 wRAA 不尽相同，但是大家的 wRC+数值并没有差的很大（除了阪神），这是因为考虑到不同球场得分难度，对其进行了加权处理。</p>
+<p>看过了球团之间的区别，来看一下选手个人之间的差别，选取了中央联盟前 15：</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007ieIrngy1h2pknxtj7vj312o0mstte.jpg"></p>
+<p>​ 图中，左边的数据很好理解，右边的话，<strong>BABIP</strong>(进场内安打率) = （安打数-本垒打数）/（打数-本垒打数-三振数+牺牲打），<strong>K%<strong>（三振率），</strong>ISO</strong>（长打率），然后图上+或者-的都是代表这个数据进行了球场修正。</p>
+<blockquote>
+<p>※牧秀悟(DeNA)は[wRAA]20.2、[wRC+]223 を記録。平均的な野手と比べて 20.2 点分得点を多く生み出し、2.23 倍の得点創出力を持つことを示す。</br><br>※牧秀悟(DeNA)は[BABIP+]111、[K%-]92、[BB%+]144、[ISO+]274 を記録。こちらは打撃スタイルを捉えることを狙いとした指標であり、平均的な野手と比べて 1.11 倍の BABIP を記録し、0.92 倍の三振、1.44 倍の四球を出し、2.74 倍の ISO を記録したことを示す。(球場補正あり)<font color="#FC6423">【可以看出，maki 相比央联平均野手多得 <strong>20.2</strong> 分，有 <strong>2.23</strong> 倍的得点创造力，非常厉害的是他不是那种只能靠轰得分的选手，场内安打率也非常高，并且较少被三振。】</font></p>
+</blockquote>
+<p>这个 blog 里还有历代排名数据、现役排名数据、球团内排名数据，不同守备位置的排名数据，还是蛮有意思的，但不得不吐槽：<strong>棒球真的有太多数据啦！</strong>​​​​</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/25/baseball/20220525/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/25/baseball/20220525/" class="post-title-link" itemprop="url">【翻译】「你和父母告密了！」横滨高中棒球部退部选手的父亲坦白职权骚扰内容</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-25 14:14:00" itemprop="dateCreated datePublished" datetime="2022-05-25T14:14:00+08:00">2022-05-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 15:47:00" itemprop="dateModified" datetime="2022-06-15T15:47:00+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A3%92%E7%90%83%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">棒球相关</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>5 月 7 日早上 9 点半，在西东京的室内练习场中，有一个默默练习着击球的光头球儿。A 君拥有 180cm 90kg 的体格，虽然只有高中 2 年纪，但也被职棒关注着。实际上他刚从名门横滨高中棒球部退部，原因是监督的“职权骚扰”。</p>
+<h2 id="「为什么会出现这样的事呢…」A-君的父亲讲述了事情的来龙去脉。"><a href="#「为什么会出现这样的事呢…」A-君的父亲讲述了事情的来龙去脉。" class="headerlink" title="「为什么会出现这样的事呢…」A 君的父亲讲述了事情的来龙去脉。"></a>「为什么会出现这样的事呢…」A 君的父亲讲述了事情的来龙去脉。</h2><p>A 君的父亲曾经是巨人和西武的投手小野刚（44），A 君从中学时代开始就以强棒的身份活跃。</p>
+<blockquote>
+<p><font color="#FC6423">大谷翔平的恩師・花巻東高的佐佐木洋监督，还有当地的強豪・花咲徳栄高也曾强烈邀请过 A 君。</font>（スポーツ紙記者）</p>
+</blockquote>
+<p>选择横滨高校的决定性原因是村田浩明监督的信。</p>
+<p>同校出身的村田监督和乐天的涌井秀章投手组成了投捕搭档拿到了春季甲子园的准优胜。大学毕业后，担任过别的学校的监督。直到 2019 年，当时横滨高的平田徹监督由于职权骚扰而被解雇，受到恩师渡辺元智的邀请，第二年成为监督。小野先生回忆过去：</p>
+<blockquote>
+<p><font color="#FC6423">是一封可以感到热情和诚意的信，邀请他成为特待生，所以为什么会发生那样的事…</font></p>
+</blockquote>
+<h2 id="「你和父母告密了！」在队友面前被恐吓"><a href="#「你和父母告密了！」在队友面前被恐吓" class="headerlink" title="「你和父母告密了！」在队友面前被恐吓"></a>「你和父母告密了！」在队友面前被恐吓</h2><p>小野先生听闻“异变”是这个春天的事。</p>
+<blockquote>
+<p><font color="#FC6423">从不止一个家长那边听说『你儿子好像被欺负了，没事吧？』儿子平时住在宿舍没有见面，本人什么也没说。只是听了家长们的话，我就知道他受到了导演的欺凌和职权骚扰。</font></p>
+</blockquote>
+<p>比如在击球练习中，村田监督投了一个慢速的坏球，没有打到球就会被怒吼「这样的的球都打不到你还是滚吧！」</p>
+<p>有一天，村田监督突然把 A 君的所有私人物品从宿舍里扔了出去，询问理由的时候，他说：「你这么依赖父母的话，就不要住宿舍自己过来吧！」但是，小野先生家住埼玉县。</p>
+<p>忍耐不了的小野先生在四月中旬和村田监督进行了面谈，但他始终主张「没有职权骚扰行为」。</p>
+<blockquote>
+<p><font color="#FC6423">我只剩下不信任感了，在那之后，儿子在队友面前被恐吓『你和父母告密了！』，流着泪被迫谢罪。</font></p>
+</blockquote>
+<p>小野先生后面和学校的教务主任也进行了面谈，但没能改善事态，所以只能选择退部这条路了。</p>
+<h2 id="也有因为压力换上圆形脱发症的学生"><a href="#也有因为压力换上圆形脱发症的学生" class="headerlink" title="也有因为压力换上圆形脱发症的学生"></a>也有因为压力换上圆形脱发症的学生</h2><p>A 君并不是个例，横滨高校中，这一年就有 3 名特待生退部了，其中一位 B 君的父亲对我们说：</p>
+<blockquote>
+<p><font color="#FC6423">从去年秋天开始，村田监督就多次否定他的人格以此施加压力，『为什么这种事情都做不到』说着这样的话。他患上了肠胃炎，联系我说『因为那个氛围连散步都做不到了』</font></p>
+</blockquote>
+<p>B 君被医生诊断为强烈的压力和心理焦虑引起的「身体化障害」， 现在仍在接受药物治疗。</p>
+<blockquote>
+<p><font color="#FC6423">本人说『想要回去』，但一旦想到监督的脸都会感到恶心和身体不适，对于父母来说（回去）是不可能的。另外也有因为压力而得了圆形脱发症的学生。」</font>（同上）</p>
+</blockquote>
+<h2 id="向横滨高校询问事实时…"><a href="#向横滨高校询问事实时…" class="headerlink" title="向横滨高校询问事实时…"></a>向横滨高校询问事实时…</h2><p>带着连续两代横滨高校监督都有职权骚扰的疑惑，给村田监督打了电话，他说：「现在比赛开始了，之后再说」，然而，后面再也联系不上他了。</p>
+<p>向横滨高校询问事实时，回答大致如下：</p>
+<blockquote>
+<p><font color="#FC6423">现阶段认为没有欺凌和职权骚扰的指导，因为正在为了仔细调查事实关系而行动中，所以不详细说明了。</font></p>
+</blockquote>
+<p>如果 A 君打算继续打棒球的话就只有转学了，但在这种情况，规定 1 年后才能在正式比赛中出场，也就是说他只剩下「3 年纪的夏天」了。</p>
+<p>以五次甲子园冠军而自豪的名校招牌在哭泣着。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/15/baseball/20220515/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/15/baseball/20220515/" class="post-title-link" itemprop="url">【翻译】甲子园常校的有前途选手一个个地退部，为什么不幸的退出事件持续发生</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-15 23:27:00" itemprop="dateCreated datePublished" datetime="2022-05-15T23:27:00+08:00">2022-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 15:46:42" itemprop="dateModified" datetime="2022-06-15T15:46:42+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A3%92%E7%90%83%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">棒球相关</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="​​期待和现实的落差"><a href="#​​期待和现实的落差" class="headerlink" title="​​期待和现实的落差"></a>​​期待和现实的落差</h2><p>全国各地正在举行春季大会之际，高校棒球中却传来了令人震惊的消息。春夏合计5次甲子园优胜的横滨高校，两位被认为有前途的二年级选手退部了。而且，神奈川县内被认为是横滨高校竞争者的东海大相模中，一年级开始就很活跃的レギュラー选手通过自己的SNS公开发表自己已经退学了。因为都是从中学时代就备受瞩目的选手，所以在SNS等地都成为了热门话题。</p>
+<p>关于这次事件的原因等细节尚未明确，考虑到选手的未来，虽然不会涉足个别案例，但迄今为止有希望的选手从强豪学校的棒球部退部，甚至高中也直接退学的情况并不稀奇。</p>
+<p>那么为什么会发生这样的事情呢？采访了中学硬式棒球俱乐部队伍的指导者，得到了以下的返信：</p>
+<blockquote>
+<p><font color="#FC6423">最大的还是期待和现实之间的差距。虽然和以前相比，可获取的信息越来越多了，但还是有很多要进去才能知道的事情。作为送选手出去上学的一方，当然是想要选手能够顺利完成高中棒球生涯，所以在进路咨询中会考虑到本人的能力和性格等，不过“不管怎样都想去〇〇高中”的选手和监护人也是有的。另一方面，不同的队伍也有指导者半强制决定选手前途的情况，那个对选手本人来说也不太好吧。虽然没有退部，但与想象中的高中棒球不同，因此而苦恼的选手很多。</font>（关东地区中学硬式棒球俱乐部队伍指导者）</p>
+</blockquote>
+<h2 id="“一年级夏天就能进大名单”"><a href="#“一年级夏天就能进大名单”" class="headerlink" title="“一年级夏天就能进大名单”"></a>“一年级夏天就能进大名单”</h2><p>很多中学俱乐部都会把毕业选手的去向放在自己的主页上。因为有能进入甲子园的高校或者是有名大学的附中的途径，所以中学时代选择了加入所属的队伍，这在家长中间已经成为了一种常识。但是，正如上文指导者所指出的那样，由于选手和高校之间的不匹配，强校的有力选手退部或退学的事件也屡见不鲜。</p>
+<p>另一个严重的问题是，期待越高的选手，待遇就越特别，在队伍中成为了“不受欢迎的存在”。笔者曾经从关东某私立高校的棒球部OB那里听过这样的话：</p>
+<blockquote>
+<p><font color="#FC6423">我三年级夏天在地方大会进了大名单，但是因为甲子园板凳人数从20人减少到18人，所以被删掉了，最后在看台上加油，然而当时在地方大会上没有那么活跃的一年级学生却在甲子园板凳上，后来听说他入学的条件是“从一年级夏天开始就可以进入大名单”。我们这边已经努力了三年了，却有以那种条件加入社团的选手，很郁闷吧。因为这件事，到现在和当时的导演还有隔阂。</font></p>
+</blockquote>
+<h2 id="“为什么不让我儿子上？”"><a href="#“为什么不让我儿子上？”" class="headerlink" title="“为什么不让我儿子上？”"></a>“为什么不让我儿子上？”</h2><p>据说有不少被全国强校的劝说邀请的“超级中学生”，就是以这样的条件加入的。如果能取得预期的成绩，成为主力选手固然好，但压力会很大，而且会被其他选手以严格的目光看待，这也是导致不幸“辍学”的原因之一。</p>
+<p>另一方面，据说接收选手的高中方也有自己的理由。关东地区某高中的监督指出“这几年选手和家长的气质有了很大的变化”，接着这样说道：</p>
+<blockquote>
+<p><font color="#FC6423">由于媒体的影响，中学时代开始就出名的选手确实变多了。当然并不是全部都是这样，但恨不得把出名写在脸上、奇怪的自尊心很强的选手也增加了，而且不仅是选手，家长也是如此。从很久以前就有“为什么不让我儿子上？”这样经常会听到的声音。对家长来说，所谓的好教练是使用自己儿子的教练。从一年级开始参加比赛的选手，因为什么原因被排除在队员名单之外，就会失去斗志的情况也很多，我觉得这几年这种倾向越来越强烈。</font></p>
+</blockquote>
+<p>在甲子园常客学校中，也有学校会把包括由替补选手组成的“B队”练习比赛在内的所有选手的成绩全部整理成册子，并分发给所有家长。据说通过这些数字来表示，来消除家长不满的声音，这种对策在过去的高中棒球中也很少看到。</p>
+<h2 id="完成高中棒球的整备工作"><a href="#完成高中棒球的整备工作" class="headerlink" title="完成高中棒球的整备工作"></a>完成高中棒球的整备工作</h2><p>最后要提到的是制度上的问题。一旦退出已加入的学校的棒球部转向其他学校时，该选手1年内不得参加正式比赛(※但因家庭原因等不得已的情况除外)。高中棒球最长只能参加2年零5个月的比赛，如果在其中浪费1年时间，无疑是极大的劣势。</p>
+<p>原本这是为了防止其他球队挖走球员而制定的规定，但考虑到青少年棒球人口的减少，这样的规定继续实行并不是上策。</p>
+<p>即使选手方和学校方都没有什么大问题，也有因为性格不合而退部的情况，这样的选手在现有的规则下是无法遵守的。如果判断不适合自己，选择其他球队也是理所当然的权利。希望有更多的选手能够在适合自己的环境下，完成高中棒球的整备工作。​​​​</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/05/baseball/20220505/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/05/baseball/20220505/" class="post-title-link" itemprop="url">【翻译】「気になる！くまもと」Vol.1009 村上宗隆选手 采访</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-05 10:53:00" itemprop="dateCreated datePublished" datetime="2022-05-05T10:53:00+08:00">2022-05-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 15:46:52" itemprop="dateModified" datetime="2022-06-15T15:46:52+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A3%92%E7%90%83%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">棒球相关</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>上个赛季，除了拿到初次全垒打王、央联MVP之外，还为日本队在棒球成为正式项目后的第一枚金牌做出了巨大贡献，成为了如今代表球界的明星选手——东京养乐多燕子队的村上宗隆选手。高中时由于经历了熊本地震，所以萌生了“想为熊本做些什么”的想法，现在也继续进行着复兴支援活动。我们采访了他对本月末（采访时间为3月）赛季开幕的干劲和对熊本的感情。</p>
+</blockquote>
+<p><font color="#42ac6f"><strong>什么时候开始打棒球的呢？</strong></font></p>
+<p>从懂事开始就一直握着球，从4岁左右开始传接球，受到了在俱乐部打球哥哥的影响，从小学1年纪开始，自己也加入了同一个队正式开始打棒球。中学之前，我的身体也不是很大。</p>
+<p><strong><font color="#42ac6f">真意外啊，听说中学开始为了磨练技术开始打硬式棒球，中学高中时代有什么回忆吗？</font></strong></p>
+<p>在熊本東リトルシニア队伍的时候，当时练习用的场地的右翼有点窄，大概就80米，所以好多次球都飞过了栅栏，打到了附近的民宅和小屋。即便如此，我一次也没被训斥过，大家真的很温暖地守护着我。但是，被监督说不要直接打出去，往左边打。从那以后，有了往反方向强打的意识，也影响到了现在的打击。</p>
+<p><strong><font color="#42ac6f">听说因为中学时代活跃的缘故，县外的高校也有发出邀请。</font></strong></p>
+<p>虽然没有很多，但是确实有邀请。不过，考虑到最能成长的地方和环境完善的高校中，还是家乡熊本的九州学院高校最适合，最后决定升学。</p>
+<p><strong><font color="#42ac6f">从一年级开始就担任九州学院高校的四棒，第一次夏甲的第一个打席就打出了满垒本垒打。在此之后也很活跃，高校通算52本垒打，留下了很棒的成绩啊。</font></strong></p>
+<p>高中时代留下的更多是不甘心的回忆，虽然一年级的夏天去了甲子园，但之后二年级和三年级夏天的县大会决胜都输掉了，错过了仅仅一步之遥的甲子园。但是，周围有很多了不起的选手和对手，正因如此，自己才能朝着前方成长，现在想起来觉得是很好的经历。</p>
+<p><strong><font color="#42ac6f">2017年选秀会议被东京养乐多燕子队第一指名。上个赛季是入团的第四年。公式战和总决赛中都非常活跃，为时隔20年的日本一做出了贡献。不管是本垒打王还是MVP，得到了很多华丽的头衔呢。</font></strong></p>
+<p>说到个人成绩，我还不是很满足，本来应该能取得更好的成绩。这个赛季所有数据都想提升一个等级，把最少3成打率、40本垒打、100打点作为目标，同时想要赢得所有的头衔。</p>
+<p><strong><font color="#42ac6f">继被称为“棒球之神”的川上哲治，平成唯一的三冠王松中信彦之后，成为了第三位熊本县出生拿过MVP的选手，和伟大的前辈们并肩了。目标是令和第一个三冠王吧。</font></strong></p>
+<p>虽然非常荣幸，但并不觉得拿到了MVP就能和前辈并肩了，也不能轻易地说三冠王。总之好好练习，留下更好的成绩。如果队伍能够2连霸的话会很开心。</p>
+<p><font color="#42ac6f"><strong>回顾去年不能忘记的还有奥林匹克的金牌，决胜中打出的本垒打很特别啊不是吗？</strong></font></p>
+<p>没想到自己能在决胜中打出一记本垒打。平常联赛中打出本垒打的时候想的是“啊，打到了。”在奥运会上，我有一种不可思议的感觉，“我真的打到了吗？”</p>
+<p><strong><font color="#42ac6f">进入职业5年，离开故乡后发现熊本有什么魅力吗？</font></strong></p>
+<p>毕竟自然很富饶，水很好喝，所以我觉得熊本的食物都很好吃。休赛期回到熊本很开心。</p>
+<p><strong><font color="#42ac6f">今年休赛期是怎么度过的？</font></strong></p>
+<p>和家人在自己家悠闲地度过，我养了一只狗，真的很可爱。和狗狗接触的时间对我来说是最好的治愈时间（笑）</p>
+<p><strong><font color="#42ac6f">村上选手从入团第2年的2019年开始，就根据本垒打和打点对熊本城进行捐赠活动，请说说你的想法。</font></strong></p>
+<p>我高中的时候熊本地震发生了，当时体会到了不能打棒球的痛苦和见不到学校朋友的寂寞，度过了艰难的时光。但是，受到了很多来自熊本的支持，现在也是。所以，想为熊本做点什么的想法更加强烈了，会继续为熊本的象征熊本城的复兴支援尽自己的绵薄之力。还有，我想回到熊本打棒球，还没有能带上燕子袖章在熊本打球的机会，想让更多的县民能看到自己打球的样子。还处于职业的第五年，我会以去年年末得到的“熊本创造梦想奖”为动力，今后也会继续努力的。</p>
+<p><strong><font color="#42ac6f">村上选手去年的活跃使得县民们也深受振奋，在县内，有拿到了足球J3联赛优胜的ロアッソ熊本，第100回全国高校足球选手权准优胜的大津高校，排球春季大会准优胜的镇西高校，第29回全国中学校駅伝女子部准优胜的山鹿中学校，体育界非常的热闹。请向致力于复兴和感染控制工作的县民，以及努力运动的孩子们说些什么吧。</font></strong></p>
+<p>虽然自然灾害和新冠感染蔓延等困难局面仍持续不断，但今后也会努力打球让广大县民拥有梦想和勇气。我希望孩子们不要忘记喜欢那个运动的心情，以目标和勇气迎接任何挑战。</p>
+<p><img src="https://wx3.sinaimg.cn/large/007ieIrnly1h1xc483820j30go0b474x.jpg"></p>
+<h2 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h2><p><font color="#808080">2000年出生于熊本市，高中时代通算52发本垒打，2017年东京养乐多燕子第一指名入团。职业第一年的9月升入一军，第一个打席打出了职业第一发本垒打。19年5月进入职业之后第一次得到到了四棒的位置，以36本垒打、96打点拿下新人王。2021年，以21岁7个月的年纪打破职业棒球史上最年少100全垒打的记录。2021年12月，因为给予熊本县民巨大梦想和希望的功绩，熊本县授予他“熊本创造梦想奖”。</font>​​​​</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/19/20220119/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/19/20220119/" class="post-title-link" itemprop="url">003：快乐复兴指南</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-19 20:36:56" itemprop="dateCreated datePublished" datetime="2022-01-19T20:36:56+08:00">2022-01-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 14:32:17" itemprop="dateModified" datetime="2022-06-15T14:32:17+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">日常随笔</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>时隔两个月的一篇新日记，希望大家都能找到自己的快乐。</p>
+<p>我的日记大概就是比微博更深入地剖析自我，但又不想像写学术论文那样长篇大论，可能也是因为写不出。也许我们都需要一个地方稍微没那么碎片地记录一些东西。</p>
+<h2 id="播客"><a href="#播客" class="headerlink" title="播客"></a>播客</h2><p>最近&lt;声东击西&gt;有一期 <a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/61dfe231d1d1fc34a7c7337f?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9"><strong>#198 反抗平台，与老派传播形式的复兴</strong></a></p>
+<blockquote>
+<p>一种又一种的媒体形式被快速颠覆：网络媒体将纸媒冲击得七零八落；社交媒体又打破了网络媒体的生存之道…… 但为什么这种情况下，传统的写信，将新闻/信息/分析等内容发送到读者的邮箱（newsletter），反而得到了新的生命力？</p>
+</blockquote>
+<p>平台对文字确实是有控制权的，即使是在豆瓣写我个人的日记，我也经常会遇到审核，即使我确信自己并没有发表任何过界或者过激的言语，也可能进小黑屋一段时间，为了减少人工的事件，一开始的审核算法更多的是搜索关键词，至于词库是否越来越大，就不得而知了。审核只是一方面，平台的把控还体现在推荐算法上，每个平台都有不同的偏好，创作者为了成为一个KOL(Key Opinion Leader)，为了吸引更多的点击，是否会去迎合平台？</p>
+<p><mark style="background-color: #FFF7CC;">当我们习惯了140字的微博，习惯了15s的抖音，会发现微博现在可以发几百字了，抖音也可以看长视频了（btw还可以倍速。</mark></p>
+<p>但是，这并不是一种反思，newsletter也不能成为真正的流行文化，它更像是给不同的人更多的选择而已，从博客-&gt;短的微博-&gt;长短皆可以的微博，其实不是一种循环，更像是螺旋上升。所有的领域都在进一步细分细化，所谓的“小而美”更符合我们这个时代，可以说选择的更多了，也可以说更少了，“破圈”成为了更困难的事。</p>
+<p>就像这期节目里聊到的，播客和newsletter很像，但首先播客的受众就已经筛选过了，而newsletter也是先订阅之后你才会收到邮件，“我们”选择了这样的生活，细分可能就是未来的趋势，针对一个特定的群体做特定的东西。</p>
+<p>就像我需要一个地方可以去写自己的长篇废话，可能是我的性格问题，我在微博上写超过400字时，我会担忧我冒犯了别人（很奇怪吧？</p>
+<p>其它几期推荐的播客有：</p>
+<p><a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/61d86a91e5adf50086c8af8a?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9">91 对话《爱情神话》导演邵艺辉：文艺无罪，女人万岁</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/61dec163ff0e411b2488afc4?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9">Vol.48 制造安福路</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/61decc75d1d1fc34a7c71f9c?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9">【番外】辞旧迎新广播电视报：爱是神话，还很美味</a></p>
+<p>共同点在于：这三期都可以和《爱情神话》联动。一是创作者本人的想法，二是电影所处环境（真实世界）的一个发展与构建，三是作为观众的想法与讨论。其实《爱情神话》对我来说就是完美契合小而美精神的一个当代作品，导演本人想要去呈现的也是上海生活的切片，它所瞄准的受众也是接受并喜欢这样的生活的人，所以从票房可以看出文艺青年没有钱。</p>
+<p>衍生阅读：<a target="_blank" rel="noopener" href="https://movie.douban.com/review/14143529">老白是怎样一种存在</a></p>
+<h2 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h2><p>这次日记的推荐读物是<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26286751/"><strong>《文学阅读指南》</strong>
+</a></p>
+<p>虽然伊格尔顿在书里批评很多学生的文学评论就是把故事复述一遍。评论的难点在于用更少的字点明亮点，本书分成五章，从“开头、人物、叙事、解读、价值”分析文学作品，是一本易读的文学评论入门书籍，书中举了大量的实例，为的就是证明“分析是快乐的”。</p>
+<p>有几个观点还是很有启发的：</p>
+<ul>
+<li>  文学人物是没有前史的</li>
+</ul>
+<p>这个说的其实是ta的起点和终点都与作品捆绑在一起，往前推移，在时间线上也必然存在一个初始点，就是ta在这个作品的时间线上最早的时刻，当作品划上句号，这个人物也瞬间停滞，像童话故事的结尾是王子公主幸福地生活在一起了，这一刻，这个故事就断了，王子和公主也消散了。<mark style="background-color: #FFF7CC;">当读者把其中的人物看作“真实的”，就是忽略了文学作品的“文学性”。</mark></p>
+<ul>
+<li>  叙事不等同于复述情节</li>
+</ul>
+<p>叙事者的选取也对作品有所影响，叙事者所看所想都带有主观思想，推理小说中非常常见的就是叙述性诡计，影视作品中也有这样的情节，从两个人的角度把同一件事讲述一遍，会发现事情完全不一样（《叹息桥》）。除此之外，叙事者又承载了超越自身的任务，“小说的语言视界要超越其中主要人物的意识”。</p>
+<ul>
+<li>  文学解读是自由的</li>
+</ul>
+<p>作为读者，我们经常性的解读文字，甚至去拆解。当作者写完最后一个句号的那一刹那，作品就脱离他了，很多时候，读者的解读是“误读”，如果我们把非作者观点的想法都归为误读，但谁又能说作者的想法就是正确的呢，写作是有意的也是无意的。解读是主观的，但文学价值是更客观的，解读基于个人的兴趣和口味，而价值更倾向于整个社会的价值判断，但两者都会随时间和社会的改变而改变。</p>
+<p>除此之外，我看了一本剧本集《我是月亮》，阅读剧本的感觉和小说不太一样，你需要自己补充一些对空间的想象，并且全篇可能充满了对话，<mark style="background-color: #FFF7CC;">“小说的语言视界要超越其中主要人物的意识”，</mark>其实指的是小说中通过叙事者所见所闻可以填充这个故事的空白处，即使主要人物是个孩童，它仍然可以清晰地记录他周围的环境，其中的描写补足了剩余的部分，剧本中也会对舞台的布置进行安排，但在阅读的过程中，画面仍然是想象出来的。不过我也同意剧本的空间比实体更广阔。</p>
+<p>之前，我很不喜欢情节靠对话推进的作品，但《我是月亮》里有一篇&lt;车祸&gt;，我很喜欢这篇。</p>
+<blockquote>
+<p>读剧本的感觉和读小说或者是看剧都不太一样，呈现方式更需要一种宽泛的想象，情节的存在感更强，非具体式细节的人物刻画，让读者更接近创作者。其中有一篇〈车祸〉，情节全靠对话推进，可能算是一个二人短剧，但台词也和旁边的群演有关，蛮有意思的。最近听展开讲讲聊到，当日常转化创作成品时，有一些“废话”就应该被有意识地省略，我们的生活必然有没必要的对话，但创作者写出来的台词需要进行加工，而不是水字数。</p>
+</blockquote>
+<p>上面是一条我之前发的微博，直接粘贴过来。<mark style="background-color: #FFF7CC;">让读者更接近创作者</mark>，今天我听完作者的播客之后更加肯定了这个观点。<a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/61bac374a7eccbe3918ae445?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9">S.080: 对话朱宜，像登月一样走进剧本</a> 加入了导演之后，最终呈现的效果和剧本创作者起初的想法又会不太一样，可能是另一种好，也可能变成没那么好了。台词或者说最终呈现的文字形态，“必须”得经过精心设计，比如伊格尔顿解读《印度之行》的开头，一口气可能有好几个押韵，洋洋洒洒分析了好几页，但是作者是否刻意去设计押韵，我们不得而知。</p>
+<p>以对话推进情节的作品，这个月还看了一本《醉步男》，里面还收录了小林泰三的处女作《玩具修理者》，喜欢的人可能很喜欢（比如我。</p>
+<p>下一篇日记大概是聊<mark style="background-color: #FFF7CC;">类型文学</mark>，所以下期再聊小林泰三。</p>
+<p>（原因是我还没看完《看海的人》。</p>
+<p>还有一个想写的坑是关于罗曼蒂克电视剧，韩剧为主（大概），会参照《阅读浪漫小说》。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/25/20211125/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/25/20211125/" class="post-title-link" itemprop="url">002：是什么让我难以舍弃去现场</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-25 15:04:09" itemprop="dateCreated datePublished" datetime="2021-11-25T15:04:09+08:00">2021-11-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 14:26:47" itemprop="dateModified" datetime="2022-06-15T14:26:47+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">日常随笔</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>古尔德于1964年退出音乐厅现场，成为科技中人。by 萨义德</p>
+</blockquote>
+<p>上周刚从三亚回上海，马不停蹄地就去馄饨皮听了一场马十，虽然除了马一之外，其它马勒的作品都不算是我的取向，但是重新体验现场的感觉还是让我神清气爽。12月份的演出目前买了陈萨的钢琴独奏会和上交的新年音乐会，前几天看完了<a target="_blank" rel="noopener" href="https://book.douban.com/subject/35361636/"><strong>《是什么让我们难以领略音乐的艺术？》</strong></a>，之前标记想读是因为之前听了引进李沧东作品的一个小出版方——鹿书的创始人录制的一期播客，之前的日记中也提到过：<a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/614c93ba0f8f37994c3bc0c9?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9">出版品牌04 | 和李沧东的出版方，聊聊在二线城市做书的可能性</a></p>
+<blockquote>
+<p>《是什么让我们难以领略音乐的艺术？》作者钱浩是清华大学的博士生，在写博士论文的期间忙里偷闲写完了一篇小说和一本著作，正是本书（笑）</p>
+</blockquote>
+<p>不能说完全认可作者的观点，但是有几个还蛮有意思的地方，比如说古典音乐与书法的相似性，书法的重点并不完全在于它的内容，像古典音乐的重点也不是它的旋律，但内容和旋律并不能直接抹去。音乐艺术与书法艺术相似，它的实用性的顺序是排在后面的，先从中国人比较能理解的书法讲起，书法是有法度的书写，书法有格律，音乐有乐理。</p>
+<p><a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/60816b6fd4e6767495a28075?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9"><strong>Vol. 13 书法101：从书法的历史谈美学的本能</strong></a></p>
+<p>这期就讲述了书法艺术与中国美学之间的联系，但是中国美学最高的境界仍然是“文墨一体”：</p>
+<blockquote>
+<p>欣赏书法并非全然基于图像。&gt; 三大行书中，《兰亭序》讲天人，人生所遇皆是暂得；《祭侄文稿》讲担当，生在天地之间对于家国应当有所承担；《寒食帖》讲逆境，人在困境中如何自处。这些千古名作里，诗文与书法相得益彰，同壁生辉， 所以古人说文墨一体，文心的表达也是书法的动人之处。</p>
+</blockquote>
+<p>然而，古典音乐中很多名曲所谓的含义都是后人所添加的，比如贝多芬第五交响曲“命运”，很多时候作曲家这么写只是因为<mark style="background-color: #FFF7CC;">“应该”</mark>这么写。西方的音乐艺术更多是一种非自然状态下的人为产物，并不都是为了抒发情感，或是模仿人声，作者也有提到一种 “歌式音乐观” ，就是认为人声是最好的乐器，难以欣赏器乐之美，能哼出旋律的乐曲才是经典之作（有很多曲子人是哼不出的。好听或是感人，成为了评价音乐的一种标准，我不想否认一首“动听”的曲子能够带来的愉悦，但是标准应该是多样化的，很多无调性音乐也成为了公认的名作，对于门外汉，可能就是这让我们难以领略音乐的艺术。</p>
+<p>回归标题聊回古尔德，最近同时在看萨义德的《音乐的极境》，古尔德最知名的作品应该是分别于职业生涯前期与最末期录制的两版《哥德堡变奏曲》。</p>
+<p><a target="_blank" rel="noopener" href="https://music.apple.com/cn/album/bach-goldberg-variations-bwv-988-the-1955-1981-recordings/594521223">Bach: Goldberg Variations, BWV 988 (The 1955 &amp; 1981 Recordings)</a></p>
+<p><em>题外话，Apple Music的古典还挺好用的。</em></p>
+<p>萨义德笔下的古尔德是二十世纪最伟大的演奏家，他在书中吐槽了很多人。古尔德在演奏生涯的巅峰期（1964）告别舞台，从此再也未公开演奏，投身于他的录音室事业，他是这么说的：“（录音）技术让艺术家得到解放，使他有更多的时间和自由，以自己的最高水准构思一部作品，让他在解除诸如紧张、焦虑、手指错音等枝节的前提下达到完美的境地；技术能够改变音乐会上令人讨厌而又不可避免的不确定性；它将与音乐无关的个人讯息排除在音乐经验之外。”</p>
+<p>他的想法当然没有问题，并且联系实际，过于繁忙的日程安排让他觉得自己“ 繁忙的演出已经使自己没有时间和精力去仔细思考音乐中更深层次的本质”，自己对自身的了解远超他人，这样的选择无错可言。</p>
+<p>但作为普通观众，是什么让我难以舍弃去现场？现场是一个人为制造出的壳，通过支付一定的费用，我得到了隔绝现实的两个小时，可能这个壳一打就碎，或者说只是国王的新壳，但是在音乐声响起的一刹那，我获得了片刻的宁静。对我来说，录音并不能替代现场的快乐，同一首曲子，互联网可以非常轻易地搜索到上百个不同的版本，就可以轻松聆听世界各地甚至是各个年代的录音，但是现场是一个不能复制的消耗品，即使有同场的录像也与瞬时的感受不同，甚至是大脑的回忆也有轻微的偏差。同一个时空下，你的座位、周围的人、当时的心情无数个变量一起构成了<mark style="background-color: #FFF7CC;">“当下”</mark>。</p>
+<p>村上在<a target="_blank" rel="noopener" href="https://book.douban.com/subject/35571598/"><strong>《第一人称单数》</strong></a>里写到：“于是那一整年，我都游手好闲地消磨时间，简直像制造不在场证明似的，也没去补习学校，净顾着出入图书馆，读大部头的小说。”（&lt;奶油&gt;）去现场对我来说也是一种制造不在场证明，证明自己不在虚度光阴，证明自己在干什么做什么，其实看书也是，证明自己不在苟活……</p>
+<p>当然这本小说集最有意思的一篇还是&lt;《养乐多燕子队诗集》&gt;，真情实感写出来的东西不管好不好，总能让人笑。</p>
+<blockquote>
+<p>总之，我确实觉得在电视屏幕上看棒球，会错过某些令人欢欣鼓舞的东西。</p>
+</blockquote>
+<p>去棒球场写诗是不是也是一种“去现场”，创造一种习惯性的环境呢？ </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/11/20211011/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/11/20211011/" class="post-title-link" itemprop="url">001：人类放空计划</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-11 16:02:22" itemprop="dateCreated datePublished" datetime="2021-10-11T16:02:22+08:00">2021-10-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 14:21:59" itemprop="dateModified" datetime="2022-06-15T14:21:59+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">日常随笔</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>可配合海浪白噪声阅读</p>
+</blockquote>
+<p>前几天在豆瓣看到一个帖子：<mark style="background-color: #FFF7CC;">有什么能提高文笔的文学作品</mark></p>
+<p>当时我的回复：</p>
+<blockquote>
+<p>纯看书是很难提高文笔的，还是要写，要表达，可以挑一些评价不错的句子段落进行仿写，在练习的时候可以不用太在意重复率，当然在之后写作过程中就不能直接拿来了。 </p>
+</blockquote>
+<p>所以，给自己制定一个写作计划：每个月至少写一篇日记。没有输入就很难输出，而没有输出就很难提高。重点记录这个月的书影音，本月推荐有两本，<a target="_blank" rel="noopener" href="https://book.douban.com/subject/35459915/"><strong>《海边的房间》</strong></a>和<a target="_blank" rel="noopener" href="https://book.douban.com/subject/35517022/"><strong>《鹿川有许多粪》</strong></a>。这两本都是小说集，前者由12篇短篇小说构成，后者是中短篇小说集，共5篇。</p>
+<h2 id="海边的房间"><a href="#海边的房间" class="headerlink" title="海边的房间"></a>海边的房间</h2><p><strong>精巧的比喻和坏掉的人。</strong></p>
+<p>我最喜欢的是那篇&lt;第三者&gt;，篇幅非常短，可以说它用到的是叙述性诡计，阿婆的《罗杰疑案》我这个月才看，由于之前看过很多推理小说和柯南，结局非常好猜中。那篇&lt;第三者&gt;除了叙述性诡计之外，同时讨论了现代人的寂寞，和一种将情感寄托于宠物身上的错位感。</p>
+<blockquote>
+<p>所有的大都来自小的累积，然而最终那大的真正规模，又往往在小中具现。例如爱情想起来是很大的，是天崩地裂，但它终于冲决的破口小得任何仪器不可能找到；例如富裕看起来是很大的，是汪洋大海，但它所充满的位置，是满到溢出去的碎浪的水雾。是一张熨烫过的报纸。是看起来一模一样的两件袍子，早晨穿的那件含苞欲放，晚上穿的那件秘密盛开。</p>
+</blockquote>
+<p>但这本小说集最动人的地方还是文字，未经翻译的文字展现其真实面貌。好的文字通过不同的译者仍能保留原有的力量感，但直接阅读原文，作者的才华赤裸地被展示。</p>
+<blockquote>
+<p>我觉得所有的年轻人都这样，特别容易痛，全身的神经末梢都打到最开，你跟世界任何一点碰撞都觉得遍体鳞伤。</p>
+</blockquote>
+<p>这两段文字都让人感受到了充沛的情感，是“满到溢出去的碎浪的水雾”，年轻人与世界仿佛是不能共存的，《德米安》中有这么一段话：<mark style="background-color: #FFF7CC;">“鸟要挣脱出壳，蛋就是世界。人要诞生于世上，就得摧毁这世界。”</mark>这样的对抗性幼稚却真挚，让人嫉妒。</p>
+<h2 id="鹿川有许多粪"><a href="#鹿川有许多粪" class="headerlink" title="鹿川有许多粪"></a>鹿川有许多粪</h2><p><strong>鹿川是一个很好听的名字。</strong></p>
+<p>在&lt;天灯&gt;中，女主人公的大学前辈也非常喜欢《德米安》的那段话。“抗争”是李沧东小说逃不开的意象，人开始创作的时候，会不自觉地选择自己最想表达的东西，就像李沧东对学运的执念。在《鹿川有许多粪》把重点放在了失败者身上，有年纪大了非要说自己也参与了运动的龙川白，又因为运动而变得陌生的张炳万，永远在怀疑自己的信惠。其实可以看出李沧东的重点并没有放在运动这件事上，即使他是左翼知识分子，而是关注在夹在运动潮流中的人，并不是悲悯，而是一种对人的好奇与探索。小说写到最后，其实永远是在写人。<br>如同李沧东在序言中提到的：“我想描写的不仅是压制个人生活的现实，还有与现实中的痛苦进行抗争，同时寻找个人生活的意义的人物形象。”</p>
+<p>换一个背景他也能创作，只不过在他短暂的小说生涯中，两本小说正好都在围绕“学运”这件事罢了，而这个背景正好又展示了压制与冲突。后者才是更重要的东西，人，不管是贪婪的善良的自大的自卑的，可憎可恶可亲可爱，都有被记录下来的意义。</p>
+<p>人的矛盾性，则是最让人着迷的地方。依旧是&lt;天灯&gt;这篇，首先描写了千警官在审讯室中的残暴，但在信惠被放出来后，她在大马路上又看见了和蔼可亲的千警官，当时的信惠非常痛苦，大喊“主啊”。但是作为读者，我们接收到的信息却是，千警官从一个单纯的反面角色，变成一个立体的人，文章前半部分也有伏笔。</p>
+<p>《鹿川有许多粪》这本书选择的主视角变成了运动者的儿子、哥哥，还有对运动有怀疑的人，同时也观察了不小心卷入了运动的普通人，以及警察。可以看出李沧东对人、运动、社会都产生了多面的想法。同名中篇小说&lt;鹿川有许多粪&gt;没有选择积极参加学运的弟弟，或者是对生活产生怀疑的妻子，而是选择普通的哥哥作为主视角。文章中提到鹿川是一个很美的名字，但是现实却被粪便围绕，崭新的公寓被大片的建筑工地围绕，从地下室搬到鹿川一层的新公寓，粪便可能看不见，但永远闻得着。新公寓和粪便，弟弟与哥哥，无数的对比都加重了这篇文章的分量。文章的最后，哥哥举报了弟弟，对活着的不解与对弟弟的愧疚，是折磨也是一种宣泄。“支撑这无数威风凛凛的高层公寓的地基，其实是一篇巨大的垃圾堆积层。”</p>
+<blockquote>
+<p>我竭力对他们的痛苦、他们的想法与愤怒感同身受。然而，不论我再怎么努力，我依旧是我，终究无法变成他们。不，我越是努力变得与他们相像，越是感觉自己不够诚实，变得不像自己，感觉自己就像是话剧中的小丑一样做些拙劣的表演。</p>
+</blockquote>
+<p>&lt;天灯&gt;这篇中有大量的暴力与性羞辱，但触动我的却是主人公虽然参与了一次活动，但她始终觉得自己是懦弱的，“永远以第一人称单数存在”，没有真正地爱上他人。可能这样格格不入的痛苦也发生在我自己的身上，对那群人的羡慕甚至是嫉妒，为什么他们可以这么坚定？为什么可以对一件事付出那么多？《月亮与六便士》的主人公是曾经的我最羡慕的人，我就像信惠那样，又残忍又懦弱，既不能感同身受，也不能豁出所有。</p>
+<p>在看这本书之前，我先听了一期出版方做的播客：<a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/614c93ba0f8f37994c3bc0c9?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9">出版品牌04 | 和李沧东的出版方，聊聊在二线城市做书的可能性</a></p>
+<p><mark style="background-color: #FFF7CC;">“逃离北上广”</mark> 众所周知，大一点的出版社基本都在北京以及上海广州， 鹿书工作室却选择在武汉，播客中分享了小出版社的优势，比如小出版社一本书卖3k就可以回本，大出版社基本又要1w才能收回成本；但劣势是他们家的书很难在一般书店找到。这期聊了非常多出版社的事，推荐。</p>
+<p>播客中也聊到了&lt;天灯&gt;中最让人触动的情节之一，主人公信惠有一天晚上突然想吃披萨，周围的披萨店都关了，她花了很长时间坐大巴去吃披萨，回来的时候她的前辈被警察带走了，别人问她去干嘛了，她却说不出自己去吃披萨了，宁可说是自己举报的前辈也不愿意说自己去吃披萨了。虽然看上去可笑却很好理解，用一件小事展示了生活的错位感。</p>
+<p>我最近也逃离北上广，搬到了海边的房间（笑）面临最大的问题是我周末没活动了，本来隔几周就能去听上交的演出，现在基本都窝在15分钟步行圈内，听现场本来是我补充曲目库最有效的方法，所以最近我还在翻来覆去听弦乐小夜曲。快递缩小了城市之间的差距，但包邮区一两天就能到的快递可能要耗费三四天。</p>
+<p>既然提到了播客，那就推荐一部剧<a target="_blank" rel="noopener" href="https://movie.douban.com/subject/35169965/"><strong>《公寓大楼里的谋杀案》</strong></a>，在主角三人团居住的公寓里发生了一起谋杀案，主角三人团都是一档犯罪播客的忠实听众，所以他们将自己寻找线索的过程用播客的形式记录下来。Amazon在现实中也为这部剧制作了一档播客 <a target="_blank" rel="noopener" href="https://www.amazon.com/dp/B08K55D8J1/ref%3Dmp_s_a_1_8?dchild=1&keywords=only+murders+in+the+building&qid=1633939102&sr=8-8">Only Murders in the Building Podcast</a>，是创作者聊他们在做这部剧的时候的构思和策划。</p>
+<blockquote>
+<p>Sneak behind-the-scenes of the Hulu Original, Only Murders in the Building starring Steve Martin, Martin Short, and Selena Gomez. Listen in as Elizabeth Keener and her DIY podcasting partner Kevin Lawn talk to the cast and crew and scramble to get clues on the murder within the show! From Straw Hut Media Produced by Ryan Tillotson William Sterling Maggie Boles Music by Kyle Meritt.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/07/20210707/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/07/20210707/" class="post-title-link" itemprop="url">暑期阅读计划/夏日碎片/生活琐事随笔</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-07 15:17:20" itemprop="dateCreated datePublished" datetime="2021-07-07T15:17:20+08:00">2021-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 14:06:26" itemprop="dateModified" datetime="2022-06-15T14:06:26+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">日常随笔</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在二十多年前的一个盛夏出生，所以生来就是喜欢夏天的，即使它炙热、吵闹和粘腻。最近在看几本听起来就很夏日的书，一本是胡安·鲁尔福的《燃烧的原野》，一本是李渝的《夏日踟躇》，前者是图书馆借的书，后者是后浪文学的赠书。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35221699/">《燃烧的原野》</a>听起来很热，但是不是燥热，是那种万物烧尽后荒芜的炙热，是失去了生机绝望的火。</strong></p>
+<blockquote>
+<p>在那里，时间是漫长的。谁也不记得时间，谁也不关心一年又一年如何过去。一个个日子，开始又结束。然后就是夜晚。只有白天和夜晚，直到死去的那一天。对于他们来说，死是一种希望。</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35153806/">《夏日踟躇》</a>光听名字就很爱上的一本书。</strong></p>
+<p>书名决定了第一印象，往往一本好书通常也有一个精妙绝伦的好名。虽然我很少看书是盲选，但好名字可以加分无数，这本完完全全就是因为名字而心动。</p>
+<blockquote>
+<p>踟躇是一个词语，读音是chíchú，意思是形容慢慢的走等，也指非常犹豫。</p>
+</blockquote>
+<p>在苦于挑书的时候，很喜欢点开关于书名的豆瓣话题，比如<a target="_blank" rel="noopener" href="https://www.douban.com/gallery/topic/293255/">那些极具故事感的书名</a></p>
+<p>豆瓣还有个话题叫<a target="_blank" rel="noopener" href="https://www.douban.com/gallery/topic/331963/?from=gallery_trend">躲在耳机里避暑</a>，本标题音乐爱好者想到的是门德尔松的《仲夏夜之梦》，是门德尔松于1843年为《仲夏夜之梦》所写的戏剧配乐，之前有部韩剧叫《你也喜欢勃拉姆斯吗？》，这个句式可以改写成：你也喜欢门德尔松吗？在作品中我们很容易看出作者本人的影子，虽然有的时候怀疑是“贴标签”，门德尔松年少成名，家境优渥，作品以精美、优雅、华丽著称，是浪漫派的代表人物。虽然《仲夏夜之梦》没有像贝五、贝九那样出名，但是其中的婚礼进行曲应该无人不知。</p>
+<p>这本<a target="_blank" rel="noopener" href="https://book.douban.com/subject/1012117/"><strong>《仲夏夜之梦》</strong></a>也在我的暑期阅读计划之中，可能读过但现在没啥印象。</p>
+<p>最近，找了一个临时工位，但是一到办公室就想着摸鱼，既不学习也不看书，让我们把一切罪过都推给夏天吧。提起夏天会想到什么？无尽的蝉鸣，燃烧的空气，汗水流下的触觉，永远不会消失的口干舌燥。夏天不是没有风，但夏日的风吹来了一团又一团的火球。在豆瓣读书首页看到了这本<a target="_blank" rel="noopener" href="https://book.douban.com/subject/35427850/"><strong>《风》</strong></a>，列入计划之中。</p>
+<p>其实这几本书被我列为暑期阅读计划，也只是因为碰巧最近是夏日，阅读的最好时机就是当下，有想看的书，不必强行等待一个不重要的时间点。五六月份由于很多琐事（landuo）没能静下心来看书，今年的阅读计划进展不顺，希望下半年好好读书。</p>
+<p>这几天还听了一期关于网络用语与好好说话的播客，过多的缩写是一定会影响使用者的语言表达能力的，但是大部分人是可以根据环境自我切换语言系统的。如果一个人在一个正式的场合还使用不规范的语言，那么出问题的可能并不是语言，而是人。写日记这件事对我来说是一种正式的记录，但与此同时，我需要更真实地面对自我、剖析自我，承认我的表达能力没那么好，有一部分原因是因为摄取过多的网络废料，另一部分就是书写能力也需要肌肉记忆，练习与琢磨。</p>
+<p>播客链接：<a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/60d50fa6a51ecfdc649d6837?s=eyJ1IjogIjVlN2M2NTFiYjNjNWJjYTVmNjQxMTQ1ZCJ9CJ9">反潮流俱乐部 S2E02丨你现在还能「好好说话」吗？</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/12/20210512/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+      <meta itemprop="name" content="Kala">
+      <meta itemprop="description" content="自言自语">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kala's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/12/20210512/" class="post-title-link" itemprop="url">繁体字阅读困难综合症</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-12 20:41:46" itemprop="dateCreated datePublished" datetime="2021-05-12T20:41:46+08:00">2021-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-15 13:57:09" itemprop="dateModified" datetime="2022-06-15T13:57:09+08:00">2022-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">日常随笔</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>慢慢消失的繁体字阅读能力。</p>
+</blockquote>
+<p>最近在读<a target="_blank" rel="noopener" href="https://book.douban.com/subject/30237204/">《圈外編輯》</a>，图书馆还没采购新版，但是有一本台版书，所以就直接借回来了。结果没看几页实在不能适应竖排，繁体倒还好尚可阅读。</p>
+<p>第一章的标题是<mark style="background-color: #FFF7CC;">&lt;做一本书要从何开始？&gt;</mark>，作者给出的答案是有手指就能做书。只要有想书写的意愿，有想发表的观点，那就表达出来吧！之前看<u>《东京本屋》</u>，本物（ ほんや ）应该算是书店的另一种表达，其中有提到一家可以寄售zine的书店——模索舍，zine就类似于独立刊物。</p>
+<blockquote>
+<p>我在模索舍看到的是人们的欲望、希望、渴望的原型，也是原石。那些粗糙的外观（有些“书”是作者自己复印并用订书机订的）、不成熟的语言与插图（高中生办的同人志那种）、言论激烈的讨论（极右或极左等等）……模索舍里满是理想、愤怒、人情的暴风雨，难怪这里找不到小清新风格的coffee table book。</p>
+</blockquote>
+<p>其实，比如像笔者在豆瓣上写日记也是一种输出，但和制作出zine还是不一样的。当文字实物化后它就有了重量，装订成册是一种仪式，在物体上打上了时代的烙印。比起统一发行的杂志，zine的灵魂是个人而私密的。</p>
+<p><strong>zine算不算非法出版呢？</strong></p>
+<p>重要的可能是制作zine的过程，而不是把它卖出去。《圈外编辑》中讲了一个故事，90年代初，作者在德国参加一个书展，遇到了一个俄罗斯人，他的书是用手动打字机和复写纸完成的，只要够用力，一次就能写五张纸，所以他的书就只有五本。</p>
+<p>扯远了，继续讲回繁体字，笔者的繁体字阅读能力主要是来源于多年漫画和字幕阅读经验，所以为什么汉化组都喜欢用繁体呢？百度了一下，发现原来很多人都问过这个问题，找到了一个字幕组的回答，看到的是图片版，那总结一下：</p>
+<p><strong>1）历史原因</strong></p>
+<p>大部分漫画是先有的台版或者港版，那大陆在翻译的时候也会借鉴；早期的汉化组中用繁体字的人比较多。</p>
+<p><strong>2）美观原因</strong></p>
+<p>早期汉化的漫画以日本漫画为主，众所周知，日语有汉字，使用繁体和原文长得比较像。然后评论下面有人也提到繁体的遮盖面积比较大，不会留下太多的空白，不会给修图人员增加工作负担。</p>
+<p>但随着国内版权的发展，购入正版之后制作的翻译字幕多半都是简体，所以现在的年轻一代不习惯阅读繁体了，患上了繁体字阅读困难综合症。生活中很难有其它机会接触繁体字了，即使笔者能阅读繁体字，却不会写，明明也写过几年书法。</p>
+<p>虽然不会消亡，但它的存在感正在慢慢减弱。世界上每分每秒都有在消失的东西，见证事物消失很悲哀，有的时候也会想，其实生活永远在继续，时间永远在前进。悲伤的不是消失的现实，而是消失这个过程，似乎听起来有点强说愁的意味。</p>
+<p>正因为会想些有的没的，才能感知到自己还活着。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kala"
+      src="https://img9.doubanio.com/icon/ul148925517-14.jpg">
+  <p class="site-author-name" itemprop="name">Kala</p>
+  <div class="site-description" itemprop="description">自言自语</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://douban.com/yourname" title="Douban → https:&#x2F;&#x2F;douban.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-quote fa-fw"></i>Douban</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kala</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>
